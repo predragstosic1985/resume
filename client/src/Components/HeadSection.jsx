@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import classNames from "classnames";
 import {
   Grid,
@@ -12,7 +12,8 @@ import {
   isWidthUp,
 } from "@material-ui/core";
 import WaveBorder from "./WaveBorder";
-// import ZoomImage from "../../../shared/components/ZoomImage";
+import ZoomImage from "./ZoomImage";
+import headerImageDisplay from "../Assets/images/web_developer_smaller.jpg";
 
 const styles = (theme) => ({
   extraLargeButtonLabel: {
@@ -97,9 +98,10 @@ const styles = (theme) => ({
   },
 });
 
-const HeadSection = ({ classes, theme, width }) => {
+function HeadSection(props) {
+  const { classes, theme, width } = props;
   return (
-    <>
+    <Fragment>
       <div className={classNames("lg-p-top", classes.wrapper)}>
         <div className={classNames("container-fluid", classes.container)}>
           <Box display="flex" justifyContent="center" className="row">
@@ -132,18 +134,16 @@ const HeadSection = ({ classes, theme, width }) => {
                           >
                             This mini application is build up using Firebase
                             model, backend Node JS and frontend React (Material
-                            UI and modular SASS) To find out more about this
-                            application check out the code on github or test
-                            basic CRUD in visitors section.
+                            UI and modular SASS).
                           </Typography>
                         </Box>
                         <Button
                           variant="contained"
                           color="secondary"
-                          //   className={classes.extraLargeButton}
-                          //   classes={{ label: classes.extraLargeButtonLabel }}
-                          target="_blank"
-                          href="https://github.com/predragstosic1985/resume"
+                          // fullWidth
+                          className={classes.extraLargeButton}
+                          classes={{ label: classes.extraLargeButtonLabel }}
+                          href="https://github.com/dunky11/react-saas-template"
                         >
                           Download from GitHub
                         </Button>
@@ -152,11 +152,12 @@ const HeadSection = ({ classes, theme, width }) => {
                   </Grid>
                   <Hidden smDown>
                     <Grid item md={6}>
-                      {/* <ZoomImage
-                        src={`${process.env.PUBLIC_URL}/images/logged_out/headerImage.jpg`}
+                      <ZoomImage
+                        // src={`../Assets/images/web_developer_smaller.jpg`}
+                        // src={headerImageDisplay}
                         className={classes.image}
-                        alt="header example"
-                      /> */}
+                        alt="image example"
+                      />
                     </Grid>
                   </Hidden>
                 </Box>
@@ -171,9 +172,9 @@ const HeadSection = ({ classes, theme, width }) => {
         className={classes.waveBorder}
         animationNegativeDelay={2}
       />
-    </>
+    </Fragment>
   );
-};
+}
 
 export default withWidth()(
   withStyles(styles, { withTheme: true })(HeadSection)
