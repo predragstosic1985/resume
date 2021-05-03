@@ -1,10 +1,10 @@
-import HeaderWebSite from "./HeaderWebSite";
+import HeadSection from "./HeadSection";
 
 const WebSite = (props) => {
   // some code
   return (
     <>
-      <HeaderWebSite />
+      <HeadSection />
     </>
   );
 };
