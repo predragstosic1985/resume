@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import WebSite from "./Components/WebSite";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -14,24 +15,25 @@ function App() {
 
   useEffect(() => {
     const initialfetch = async () => {
-      const tt = await fetch("/api/hello/read").then((res) => res.json());
-
-      // await fetch("/api/hello/read").then((res) => setFireBaseTest(res.id));
-      console.log(tt);
-      setFireBaseTest(tt[0].id);
-      return tt;
+      const fetchData = await fetch("/api/hello/read").then((res) =>
+        res.json()
+      );
+      setFireBaseTest(fetchData[0].id);
     };
     initialfetch();
   }, []);
 
+  console.log(fireBaseTest);
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+      <WebSite />
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>{!data ? "Loading..." : data}</p>
         <p>{!fireBaseTest ? "Loading from firebase..." : fireBaseTest}</p>
-      </header>
-    </div>
+      </header> */}
+    </>
   );
 }
 

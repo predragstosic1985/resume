@@ -1,0 +1,15 @@
+{
+    "app.header": "Edutuj<code>{fileName}</code> srpski jezik",
+    "app.content": "Nauci React",
+    "app.channel.plug": "Tutorial obezbedio PS licno",
+    "app.plural": "{amount, plural, =0 {no languages} one {# one language} nelkoliko {# several languages} many {# lots of languages} other {# wrong fromat}}",
+    "ws.navigation.about": "O nama",
+    "ws.navigation.services": "Usluge",
+    "ws.navigation.galery": "Galerija",
+    "ws.navigation.contact": "Kontakt",
+    "ws.header.signIn": "Prijavi se",
+    "ws.header.chooseLanguage": "Odaberi jezik",
+    "ws.header.language": "Jezik",
+    "ws.header.about": "o nama",
+    "ws.header.title": "Dobro došli"
+}
