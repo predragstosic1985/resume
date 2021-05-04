@@ -12,5 +12,8 @@
     "FeatureSection.model": "U zavisnosti od projekta i zahteva koristim  NoSQL ili SQL bazu. Primera radi MongoDB i Firebase nude mnogo prednosti ali ako su zahtevi veci koristim i PostgreSQL, MySQL, i HANA db.",
     "FeatureSection.testing": "Nema dobrog kvaliteta bez testiranja, koristim Jest/Enzume, OPA5, JUnit i SAOP UI za testiranje.",
     "FeatureSection.postman": "Moja omiljena alatka za testiranje i povezivanje be i fe.",
-    "FeatureSection.control": "pretezno koristim  bitbucket/source tree. Ali koristim aktivno i github, i git bash"
+    "FeatureSection.control": "pretezno koristim  bitbucket/source tree. Ali koristim aktivno i github, i git bash",
+    "Footer.send": "Posalji poruku",
+    "Footer.network": "Drustvene mreze",
+    "Footer.networkMore": "Vise o meni na drustvenim mrezama."
 }

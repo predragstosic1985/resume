@@ -12,5 +12,8 @@
     "FeatureSection.model": "Depending on a project and demands I use NoSQL or SQL database. MongoDB or Firebase offers a lot of advantages but if the project's demands are for SQL DB I am also working with PostgreSQL, MySQL, and HANA.",
     "FeatureSection.testing": "Good quality comes with a lot of testing coverage. I used Jest/Enzyme, OPA5, JUnit, and SAOP UI.",
     "FeatureSection.postman": "My favorite tool when I am connecting backend to frontend.",
-    "FeatureSection.control": "Most of my time I am using bitbucket/source tree. But I also use GitHub and git bash."
+    "FeatureSection.control": "Most of my time I am using bitbucket/source tree. But I also use GitHub and git bash.",
+    "Footer.send": "Send message",
+    "Footer.network": "Social networks",
+    "Footer.networkMore": "More info about me on social networks."
 }
