@@ -1,11 +1,16 @@
 {
-    "ws.navigation.about": "About Us",
-    "ws.navigation.services": "Services",
-    "ws.navigation.galery": "Gallery",
-    "ws.navigation.contact": "Contact",
-    "ws.header.signIn": "Log in",
-    "ws.header.chooseLanguage": "Select Language",
-    "ws.header.language": "Language",
-    "ws.header.about": "About us",
-    "ws.header.title": "Welcome"
+    "HeadSection.application": "This mini application is build up using model-Firebase, backend-Node JS and frontend-React(Material UI and modular SASS).",
+    "HeadSection.download": "Download from GitHub",
+    "FeatureSection.technologies": "Technologies",
+    "FeatureSection.JS": "I find it a very interesting scripting language that allows me to write code on the backend as well as on the frontend side.",
+    "FeatureSection.node": "I like working in Node it is very interesting and a fast way to develop great apps.",
+    "FeatureSection.react": "In combination with Node very powerful tool but also with any other backend.",
+    "FeatureSection.sapui5": "SAPUI5 (SAP user interface for HTML5) is a collection of libraries that you can use to build desktop and mobile applications that run in a browser.",
+    "FeatureSection.html": "It is very interesting to see how some data are presented on the frontend side. Building elements and mapping data in html5 with a little bit a style CSS3.",
+    "FeatureSection.scss": "I can say only wow! Styling is never been easier.",
+    "FeatureSection.java": "Java is a very strict programing language, for backend technologies, so I like it. But past few years my focus is on JavaScript mainly because of its advantage to write backend and frontend on the same programing language.",
+    "FeatureSection.model": "Depending on a project and demands I use NoSQL or SQL database. MongoDB or Firebase offers a lot of advantages but if the project's demands are for SQL DB I am also working with PostgreSQL, MySQL, and HANA.",
+    "FeatureSection.testing": "Good quality comes with a lot of testing coverage. I used Jest/Enzyme, OPA5, JUnit, and SAOP UI.",
+    "FeatureSection.postman": "My favorite tool when I am connecting backend to frontend.",
+    "FeatureSection.control": "Most of my time I am using bitbucket/source tree. But I also use GitHub and git bash."
 }

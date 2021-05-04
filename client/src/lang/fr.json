@@ -1,12 +1,3 @@
 {
-    "app.plural": "{amount, plural, =0 {no languages} one {# one language} few {# several languages} many {# lots of languages} other {# wrong fromat}}",
-    "ws.navigation.about": "À propos de nous",
-    "ws.navigation.services": "Services",
-    "ws.navigation.galery": "Galerie",
-    "ws.navigation.contact": "Contact",
-    "ws.header.signIn": "Connectez-vous",
-    "ws.header.chooseLanguage": "Sélectionner la langue",
-    "ws.header.language": "Langue",
-    "ws.header.about": "À propos de nous",
-    "ws.header.title": "Bienvenue"
+    "HeadSection.application": "This mini application is build up using model-Firebase, backend-Node JS and frontend-React(Material UI and modular SASS)."
 }

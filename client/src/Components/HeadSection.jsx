@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import {
   Grid,
@@ -14,6 +15,7 @@ import {
 import WaveBorder from "./WaveBorder";
 import ZoomImage from "./ZoomImage";
 import headerImageDisplay from "../Assets/images/web_developer_smaller.jpg";
+import { FormattedMessage } from "react-intl";
 
 const styles = (theme) => ({
   extraLargeButtonLabel: {
@@ -132,20 +134,24 @@ function HeadSection(props) {
                             variant={isWidthUp("lg", width) ? "h6" : "body1"}
                             color="textSecondary"
                           >
-                            This mini application is build up using Firebase
-                            model, backend Node JS and frontend React (Material
-                            UI and modular SASS).
+                            <FormattedMessage
+                              id="HeadSection.application"
+                              defaultMessage="application"
+                            />
                           </Typography>
                         </Box>
                         <Button
                           variant="contained"
                           color="secondary"
-                          // fullWidth
+                          fullWidth
                           className={classes.extraLargeButton}
                           classes={{ label: classes.extraLargeButtonLabel }}
-                          href="https://github.com/dunky11/react-saas-template"
+                          href="https://github.com/predragstosic1985/resume"
                         >
-                          Download from GitHub
+                          <FormattedMessage
+                            id="HeadSection.download"
+                            defaultMessage="download"
+                          />
                         </Button>
                       </div>
                     </Box>
@@ -153,10 +159,9 @@ function HeadSection(props) {
                   <Hidden smDown>
                     <Grid item md={6}>
                       <ZoomImage
-                        // src={`../Assets/images/web_developer_smaller.jpg`}
-                        // src={headerImageDisplay}
+                        src={headerImageDisplay}
                         className={classes.image}
-                        alt="image example"
+                        alt="header example"
                       />
                     </Grid>
                   </Hidden>
@@ -175,6 +180,12 @@ function HeadSection(props) {
     </Fragment>
   );
 }
+
+HeadSection.propTypes = {
+  classes: PropTypes.object,
+  width: PropTypes.string,
+  theme: PropTypes.object,
+};
 
 export default withWidth()(
   withStyles(styles, { withTheme: true })(HeadSection)

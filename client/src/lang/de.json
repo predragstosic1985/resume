@@ -1,11 +1,16 @@
 {
-    "ws.navigation.about": "Über uns",
-    "ws.navigation.services": "Services",
-    "ws.navigation.galery": "Galerie",
-    "ws.navigation.contact": "Kontakt",
-    "ws.header.signIn": "Anmelden",
-    "ws.header.chooseLanguage": "Sprache auswählen",
-    "ws.header.language": "Sprache",
-    "ws.header.about": "Über uns",
-    "ws.header.title": "Willkommen"
+    "HeadSection.application": "Diese Mini-Anwendung wird mit Model-Firebase, Backend-Node JS und Frontend-React (Material UI und modularer SASS) erstellt.",
+    "HeadSection.download": "Von GitHub herunterladen",
+    "FeatureSection.technologies": "Technologien",
+    "FeatureSection.JS": "Ich finde es eine sehr interessante Skriptsprache, mit der ich Code sowohl im Backend als auch im Frontend schreiben kann.",
+    "FeatureSection.node": "Ich arbeite gerne in Node. Es ist sehr interessant und ein schneller Weg, um großartige Apps zu entwickeln.",
+    "FeatureSection.react": "In Kombination mit Node sehr leistungsfähiges Tool, aber auch mit jedem anderen Backend.",
+    "FeatureSection.sapui5": "SAPUI5 (SAP-Benutzeroberfläche für HTML5) ist eine Sammlung von Bibliotheken, mit denen Sie Desktop- und mobile Anwendungen erstellen können, die in einem Browser ausgeführt werden.",
+    "FeatureSection.html": "Es ist sehr interessant zu sehen, wie einige Daten auf der Frontend-Seite dargestellt werden. Erstellen von Elementen und Zuordnen von Daten in HTML5 mit ein wenig CSS3-Stil.",
+    "FeatureSection.scss": "Ich kann nur wow sagen! Styling war noch nie einfacher.",
+    "FeatureSection.java": "Java ist eine sehr strenge Programmiersprache für Backend-Technologien, daher gefällt es mir. In den letzten Jahren habe ich mich hauptsächlich auf JavaScript konzentriert, weil es den Vorteil hat, Backend und Frontend in derselben Programmiersprache zu schreiben.",
+    "FeatureSection.model": "Je nach Projekt und Anforderungen verwende ich eine NoSQL- oder SQL-Datenbank. MongoDB oder Firebase bieten viele Vorteile, aber wenn die Anforderungen des Projekts an SQL DB gestellt werden, arbeite ich auch mit PostgreSQL, MySQL und HANA.",
+    "FeatureSection.testing": "Gute Qualität bringt viel Testabdeckung mit sich. Ich habe Jest / Enzyme, OPA5, JUnit und SAOP UI verwendet.",
+    "FeatureSection.postman": "Mein Lieblingswerkzeug, wenn ich Backend mit Frontend verbinde.",
+    "FeatureSection.control": "Die meiste Zeit benutze ich Bitbucket / Source Tree. Ich benutze aber auch GitHub und Git Bash."
 }

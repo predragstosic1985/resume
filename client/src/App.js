@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import theme from "./theme";
 import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
 import WebSite from "./Components/WebSite";
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
   // eslint-disable-next-line
@@ -30,6 +31,7 @@ function App() {
     <>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
+        <GlobalStyles />
         <WebSite />
       </MuiThemeProvider>
       {/* <header className="App-header">

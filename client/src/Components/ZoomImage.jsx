@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useCallback, useEffect } from "react";
+import PropTypes from "prop-types";
 import { Portal, Backdrop, withStyles } from "@material-ui/core";
 import ScrollbarSize from "@material-ui/core/Tabs/ScrollbarSize";
 import classNames from "classnames";
@@ -51,22 +52,22 @@ function ZoomImage(props) {
     setZoomedIn(false);
   }, [setZoomedIn]);
 
-  //   useEffect(() => {
-  //     if (zoomedIn) {
-  //       document.body.style.overflow = "hidden";
-  //       document.body.style.paddingRight = `${scrollbarSize}px`;
-  //       document.querySelector(
-  //         "header"
-  //       ).style.paddingRight = `${scrollbarSize}px`;
-  //     } else {
-  //       document.body.style.overflow = "auto";
-  //       document.body.style.paddingRight = "0px";
-  //       document.querySelector("header").style.paddingRight = "0px";
-  //     }
-  //   }, [zoomedIn, scrollbarSize]);
+  // useEffect(() => {
+  //   if (zoomedIn) {
+  //     document.body.style.overflow = "hidden";
+  //     document.body.style.paddingRight = `${scrollbarSize}px`;
+  //     document.querySelector(
+  //       "header"
+  //     ).style.paddingRight = `${scrollbarSize}px`;
+  //   } else {
+  //     document.body.style.overflow = "auto";
+  //     document.body.style.paddingRight = "0px";
+  //     document.querySelector("header").style.paddingRight = "0px";
+  //   }
+  // }, [zoomedIn, scrollbarSize]);
 
   return (
-    <>
+    <Fragment>
       <ScrollbarSize onChange={setScrollbarSize}></ScrollbarSize>
       {zoomedIn && (
         <Portal>
@@ -94,8 +95,17 @@ function ZoomImage(props) {
         className={classNames(className, classes.zoomedOutImage)}
         {...rest}
       ></img>
-    </>
+    </Fragment>
   );
 }
+
+ZoomImage.propTypes = {
+  classes: PropTypes.object.isRequired,
+  alt: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  theme: PropTypes.object.isRequired,
+  zoomedImgProps: PropTypes.object,
+  className: PropTypes.string,
+};
 
 export default withStyles(styles, { withTheme: true })(ZoomImage);
