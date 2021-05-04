@@ -11,7 +11,6 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
-import HowToRegIcon from "@material-ui/icons/HowToReg";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "./AdditionalComponents/NavigationDrawer";
@@ -42,7 +41,6 @@ const styles = (theme) => ({
 function NavBar(props) {
   const {
     classes,
-    openRegisterDialog,
     openLoginDialog,
     handleMobileDrawerOpen,
     handleMobileDrawerClose,
@@ -56,17 +54,12 @@ function NavBar(props) {
       icon: <HomeIcon className="text-white" />,
     },
     {
-      link: "/blog",
-      name: "Blog",
+      link: "/language",
+      name: "Language",
       icon: <BookIcon className="text-white" />,
     },
     {
-      name: "Register",
-      onClick: openRegisterDialog,
-      icon: <HowToRegIcon className="text-white" />,
-    },
-    {
-      name: "Login",
+      name: "Logout",
       onClick: openLoginDialog,
       icon: <LockOpenIcon className="text-white" />,
     },
@@ -158,7 +151,6 @@ NavBar.propTypes = {
   handleMobileDrawerClose: PropTypes.func,
   mobileDrawerOpen: PropTypes.bool,
   selectedTab: PropTypes.string,
-  openRegisterDialog: PropTypes.func.isRequired,
   openLoginDialog: PropTypes.func.isRequired,
 };
 

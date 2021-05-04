@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import { Grid, Typography, isWidthUp, withWidth } from "@material-ui/core";
 import CodeIcon from "@material-ui/icons/Code";
 import BuildIcon from "@material-ui/icons/Build";
+import DesktopWindowsIcon from "@material-ui/icons/DesktopWindows";
 import ComputerIcon from "@material-ui/icons/Computer";
+import DeviceHubIcon from "@material-ui/icons/DeviceHub";
 import BarChartIcon from "@material-ui/icons/BarChart";
-import HeadsetMicIcon from "@material-ui/icons/HeadsetMic";
-import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
+import TransformIcon from "@material-ui/icons/Transform";
+import DevicesIcon from "@material-ui/icons/Devices";
 import CloudIcon from "@material-ui/icons/Cloud";
-import MeassageIcon from "@material-ui/icons/Message";
+import ViewModuleIcon from "@material-ui/icons/ViewModule";
+import SettingsOverscanIcon from "@material-ui/icons/SettingsOverscan";
 import CancelIcon from "@material-ui/icons/Cancel";
 import calculateSpacing from "./Utils/calculateSpacing";
 import FeatureCard from "./AdditionalComponents/FeatureCard";
@@ -24,7 +27,7 @@ const features = [
     text: (
       <FormattedMessage id="FeatureSection.JS" defaultMessage="JavaScript" />
     ),
-    icon: <ComputerIcon style={{ fontSize: iconSize }} />,
+    icon: <DesktopWindowsIcon style={{ fontSize: iconSize }} />,
     mdDelay: "0",
     smDelay: "200",
   },
@@ -32,7 +35,7 @@ const features = [
     color: "#00C853",
     headline: "NodeJS",
     text: <FormattedMessage id="FeatureSection.node" defaultMessage="Node" />,
-    icon: <BuildIcon style={{ fontSize: iconSize }} />,
+    icon: <CodeIcon style={{ fontSize: iconSize }} />,
     mdDelay: "0",
     smDelay: "0",
   },
@@ -40,7 +43,7 @@ const features = [
     color: "#6200EA",
     headline: "React",
     text: <FormattedMessage id="FeatureSection.react" defaultMessage="React" />,
-    icon: <CalendarTodayIcon style={{ fontSize: iconSize }} />,
+    icon: <ComputerIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "200",
   },
@@ -50,7 +53,7 @@ const features = [
     text: (
       <FormattedMessage id="FeatureSection.sapui5" defaultMessage="sapui5" />
     ),
-    icon: <MeassageIcon style={{ fontSize: iconSize }} />,
+    icon: <DevicesIcon style={{ fontSize: iconSize }} />,
     mdDelay: "400",
     smDelay: "0",
   },
@@ -58,7 +61,7 @@ const features = [
     color: "#DD2C00",
     headline: "html5, CSS3, bootstrap",
     text: <FormattedMessage id="FeatureSection.html" defaultMessage="html" />,
-    icon: <BarChartIcon style={{ fontSize: iconSize }} />,
+    icon: <SettingsOverscanIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "0",
   },
@@ -66,7 +69,7 @@ const features = [
     color: "#64DD17",
     headline: "modular SASS or CSS",
     text: <FormattedMessage id="FeatureSection.scss" defaultMessage="scss" />,
-    icon: <HeadsetMicIcon style={{ fontSize: iconSize }} />,
+    icon: <BarChartIcon style={{ fontSize: iconSize }} />,
     mdDelay: "400",
     smDelay: "200",
   },
@@ -74,7 +77,7 @@ const features = [
     color: "#304FFE",
     headline: "Java",
     text: <FormattedMessage id="FeatureSection.java" defaultMessage="java" />,
-    icon: <CloudIcon style={{ fontSize: iconSize }} />,
+    icon: <TransformIcon style={{ fontSize: iconSize }} />,
     mdDelay: "0",
     smDelay: "0",
   },
@@ -82,7 +85,7 @@ const features = [
     color: "#C51162",
     headline: "Model",
     text: <FormattedMessage id="FeatureSection.model" defaultMessage="model" />,
-    icon: <CodeIcon style={{ fontSize: iconSize }} />,
+    icon: <ViewModuleIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "200",
   },
@@ -97,17 +100,17 @@ const features = [
     smDelay: "0",
   },
   {
-    color: "#00B8D4",
+    color: "#FFA500",
     headline: "Postman",
     text: (
       <FormattedMessage id="FeatureSection.postman" defaultMessage="postman" />
     ),
-    icon: <CancelIcon style={{ fontSize: iconSize }} />,
+    icon: <BuildIcon style={{ fontSize: iconSize }} />,
     mdDelay: "400",
     smDelay: "0",
   },
   {
-    color: "#00B8D4",
+    color: "#0052CC",
     headline: "Source control",
     text: (
       <FormattedMessage
@@ -115,15 +118,15 @@ const features = [
         defaultMessage="source control"
       />
     ),
-    icon: <CancelIcon style={{ fontSize: iconSize }} />,
+    icon: <DeviceHubIcon style={{ fontSize: iconSize }} />,
     mdDelay: "400",
     smDelay: "0",
   },
   {
-    color: "#00B8D4",
+    color: "#6554C0",
     headline: "Scrum/Agile",
     text: "At my current job, we use Scrum methodology and Jira.",
-    icon: <CancelIcon style={{ fontSize: iconSize }} />,
+    icon: <CloudIcon style={{ fontSize: iconSize }} />,
     mdDelay: "400",
     smDelay: "0",
   },
