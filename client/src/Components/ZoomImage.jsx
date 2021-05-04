@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useCallback, useEffect } from "react";
+import React, { Fragment, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import { Portal, Backdrop, withStyles } from "@material-ui/core";
 import ScrollbarSize from "@material-ui/core/Tabs/ScrollbarSize";
@@ -40,6 +40,7 @@ const styles = (theme) => ({
 });
 
 function ZoomImage(props) {
+  /* eslint-disable no-unused-vars */
   const { alt, src, zoomedImgProps, classes, className, ...rest } = props;
   const [zoomedIn, setZoomedIn] = useState(false);
   const [scrollbarSize, setScrollbarSize] = useState(null);
@@ -51,20 +52,6 @@ function ZoomImage(props) {
   const zoomOut = useCallback(() => {
     setZoomedIn(false);
   }, [setZoomedIn]);
-
-  // useEffect(() => {
-  //   if (zoomedIn) {
-  //     document.body.style.overflow = "hidden";
-  //     document.body.style.paddingRight = `${scrollbarSize}px`;
-  //     document.querySelector(
-  //       "header"
-  //     ).style.paddingRight = `${scrollbarSize}px`;
-  //   } else {
-  //     document.body.style.overflow = "auto";
-  //     document.body.style.paddingRight = "0px";
-  //     document.querySelector("header").style.paddingRight = "0px";
-  //   }
-  // }, [zoomedIn, scrollbarSize]);
 
   return (
     <Fragment>

@@ -151,12 +151,22 @@ function Footer(props) {
         <Grid container spacing={isWidthUp("md", width) ? 10 : 5}>
           <Grid item xs={12} md={6} lg={4}>
             <form>
+              <Typography
+                className={classes.whiteBg}
+                variant={"h5"}
+                color="inherit"
+                align="center"
+              >
+                <FormattedMessage
+                  id="Footer.getIn"
+                  defaultMessage="Send Message"
+                />
+              </Typography>
               <Box display="flex" flexDirection="column">
                 <Box mb={1}>
                   <TextField
                     variant="outlined"
                     multiline
-                    placeholder="Get in touch with us"
                     inputProps={{ "aria-label": "Get in Touch" }}
                     InputProps={{
                       className: classes.whiteBg,

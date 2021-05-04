@@ -14,7 +14,7 @@ import {
   Toolbar,
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const styles = (theme) => ({
   closeIcon: {
@@ -75,7 +75,7 @@ function NavigationDrawer(props) {
         {menuItems.map((element) => {
           if (element.link) {
             return (
-              <Router>
+              <Router key={element.name}>
                 <Link
                   key={element.name}
                   to={element.link}

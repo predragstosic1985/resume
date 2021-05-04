@@ -13,6 +13,7 @@ import CancelIcon from "@material-ui/icons/Cancel";
 import calculateSpacing from "./Utils/calculateSpacing";
 import FeatureCard from "./AdditionalComponents/FeatureCard";
 import { FormattedMessage } from "react-intl";
+import moduleStyles from "./style/FeatureSection.module.scss";
 
 const iconSize = 30;
 
@@ -131,7 +132,7 @@ const features = [
 function FeatureSection(props) {
   const { width } = props;
   return (
-    <div style={{ backgroundColor: "#FFFFFF" }}>
+    <div className={moduleStyles.containerFeature}>
       <div className="container-fluid lg-p-top">
         <Typography variant="h3" align="center" className="lg-mg-bottom">
           <FormattedMessage

@@ -15,7 +15,7 @@ import HowToRegIcon from "@material-ui/icons/HowToReg";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "./AdditionalComponents/NavigationDrawer";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const styles = (theme) => ({
   appBar: {
@@ -82,7 +82,7 @@ function NavBar(props) {
               display="inline"
               color="primary"
             >
-              Wa
+              C
             </Typography>
             <Typography
               variant="h4"
@@ -90,7 +90,7 @@ function NavBar(props) {
               display="inline"
               color="secondary"
             >
-              Ver
+              V
             </Typography>
           </div>
           <div>
@@ -107,7 +107,7 @@ function NavBar(props) {
               {menuItems.map((element) => {
                 if (element.link) {
                   return (
-                    <Router>
+                    <Router key={element.name}>
                       <Link
                         key={element.name}
                         to={element.link}

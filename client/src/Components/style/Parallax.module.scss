@@ -1,0 +1,23 @@
+.parallaxContainer {
+  margin-top: auto !important;
+  height: 25rem;
+}
+
+.insideStyles {
+  background: white;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cardInsideStyles {
+  width: 20rem !important;
+  height: 15rem !important;
+}
+.imageStyle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
