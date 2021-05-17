@@ -1,51 +1,66 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
-import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import styles from "./style/CommentsSection.module.scss";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    maxWidth: "36ch",
-    backgroundColor: theme.palette.background.paper,
-  },
-  inline: {
-    display: "inline",
-  },
-}));
+// import "./styles.css";
 
-export default function AlignItemsList() {
-  const classes = useStyles();
+const imgLink =
+  "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260";
 
+export default function CommentsSection() {
   return (
-    <List className={classes.root}>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-        </ListItemAvatar>
-        <ListItemText
-          primary="Oui Oui"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                John Doe
-              </Typography>
-              {"Best comment ever."}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-    </List>
+    <div className={styles.containerComment}>
+      <h1>Comments</h1>
+      <Paper className={styles.Paper}>
+        <Grid container wrap="nowrap" spacing={2}>
+          <Grid item>
+            <Avatar alt="Remy Sharp" src={imgLink} />
+          </Grid>
+          <Grid justifyContent="left" item xs zeroMinWidth>
+            <h4 style={{ margin: 0, textAlign: "left" }}>Michel Michel</h4>
+            <p style={{ textAlign: "left" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              luctus ut est sed faucibus. Duis bibendum ac ex vehicula laoreet.
+              Suspendisse congue vulputate lobortis. Pellentesque at interdum
+              tortor. Quisque arcu quam, malesuada vel mauris et, posuere
+              sagittis ipsum. Aliquam ultricies a ligula nec faucibus. In elit
+              metus, efficitur lobortis nisi quis, molestie porttitor metus.
+              Pellentesque et neque risus. Aliquam vulputate, mauris vitae
+              tincidunt interdum, mauris mi vehicula urna, nec feugiat quam
+              lectus vitae ex.{" "}
+            </p>
+            <p style={{ textAlign: "left", color: "gray" }}>
+              posted 1 minute ago
+            </p>
+          </Grid>
+        </Grid>
+        <Divider variant="fullWidth" style={{ margin: "30px 0" }} />
+        <Grid container wrap="nowrap" spacing={2}>
+          <Grid item>
+            <Avatar alt="Remy Sharp" src={imgLink} />
+          </Grid>
+          <Grid justifyContent="left" item xs zeroMinWidth>
+            <h4 style={{ margin: 0, textAlign: "left" }}>Michel Michel</h4>
+            <p style={{ textAlign: "left" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              luctus ut est sed faucibus. Duis bibendum ac ex vehicula laoreet.
+              Suspendisse congue vulputate lobortis. Pellentesque at interdum
+              tortor. Quisque arcu quam, malesuada vel mauris et, posuere
+              sagittis ipsum. Aliquam ultricies a ligula nec faucibus. In elit
+              metus, efficitur lobortis nisi quis, molestie porttitor metus.
+              Pellentesque et neque risus. Aliquam vulputate, mauris vitae
+              tincidunt interdum, mauris mi vehicula urna, nec feugiat quam
+              lectus vitae ex.{" "}
+            </p>
+            <p style={{ textAlign: "left", color: "gray" }}>
+              posted 1 minute ago
+            </p>
+          </Grid>
+        </Grid>
+      </Paper>
+    </div>
   );
 }
