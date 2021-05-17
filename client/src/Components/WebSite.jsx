@@ -4,6 +4,8 @@ import FeatureSection from "./FeatureSection";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
 import ParallaxComponent from "./ParallaxComponent";
+import CommentsSection from "./CommentsSection";
+import CommentsForm from "./CommentsForm";
 
 const WebSite = () => {
   /* eslint-disable no-unused-vars */
@@ -43,6 +45,8 @@ const WebSite = () => {
       <HeadSection />
       <FeatureSection />
       <ParallaxComponent />
+      <CommentsForm />
+      <CommentsSection />
       <Footer />
     </>
   );

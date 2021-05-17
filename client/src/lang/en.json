@@ -17,5 +17,9 @@
     "Footer.network": "Social networks",
     "Footer.networkMore": "More info about me on social networks.",
     "Footer.getIn": "Get in touch with me.",
-    "Parallax.tech": "Latest technology interest"
+    "Parallax.tech": "Latest technology interest",
+    "CommentsForm.comment": "Write your comment",
+    "CommentsForm.public": "Public",
+    "CommentsForm.content": "If you enter a valid email address the system will send you a thank you note to your email.",
+    "CommentsForm.checkboxContent": "Choose whether you want the comment to be visible to all visitors or only to the administrator/author/Predrag Stosic"
 }

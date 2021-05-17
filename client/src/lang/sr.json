@@ -17,5 +17,11 @@
     "Footer.network": "Drustvene mreze",
     "Footer.networkMore": "Vise o meni na drustvenim mrezama.",
     "Footer.getIn": "Kontaktirajte me",
-    "Parallax.tech": "Najnovije interesovanje"
+    "Parallax.tech": "Najnovije interesovanje",
+    "CommentsForm.header": "Ostavi komentar",
+    "CommentsForm.email": "Email Adresa",
+    "CommentsForm.comment": "Napisite svoj komentar",
+    "CommentsForm.public": "Vidljiv svima komantar",
+    "CommentsForm.content": "Ako unesete validnu email adresu sistem ce vam poslati zahvalnicu na vas email.",
+    "CommentsForm.checkboxContent": "Odaberite da li zelite da komentar bude vidljiv svim posetiocima ili samo administratoru/autoru/Predrag Stosic"
 }
