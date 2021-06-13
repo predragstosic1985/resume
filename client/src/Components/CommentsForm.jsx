@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
+
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import MessageIcon from "@material-ui/icons/Message";
@@ -8,9 +8,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { FormattedMessage } from "react-intl";
 import CommentsFormHeader from "./AdditionalComponents/CommentsFormHeader";
-import CommentsFormCheckBox from "./AdditionalComponents/CommentsFormCheckBox";
-import { postComment, getComments } from "../commentsServices";
-import useFetch from "../hooks/Fetcher";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -32,38 +29,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CommentsForm() {
+export default function CommentsForm({ handleOnChange }) {
   const classes = useStyles();
-  const [
-    retrivedComments,
-    loadRetrivedComments,
-    reFetchetrivedComments,
-    setRetrivedComments,
-  ] = useFetch(getComments(), true);
-  const [comment, setComment] = useState({
-    name: "",
-    email: "",
-    comment: "",
-  });
-
-  const handleOnChange = (e, data) => {
-    const { name, value } = e.target;
-    setComment({ ...comment, [name]: value });
-  };
-
-  const submitComment = async () => {
-    const response = await postComment(comment);
-    if (response) {
-      console.log("success");
-      reFetchetrivedComments();
-    } else {
-      console.log("err");
-    }
-  };
 
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
+
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <MessageIcon />
@@ -71,7 +43,7 @@ export default function CommentsForm() {
         <CommentsFormHeader />
 
         <form className={classes.form} noValidate>
-          <CommentsFormCheckBox />
+          {/* <CommentsFormCheckBox /> */}
           <TextField
             variant="outlined"
             margin="normal"
@@ -124,15 +96,6 @@ export default function CommentsForm() {
             autoComplete="off"
             autoFocus
           />
-          <Button
-            fullWidth
-            variant="contained"
-            color="primary"
-            onClick={submitComment}
-            className={classes.submit}
-          >
-            <FormattedMessage id="CommentsForm.Send" defaultMessage="Send" />
-          </Button>
         </form>
       </div>
     </Container>

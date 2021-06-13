@@ -25,5 +25,7 @@
     "CommentsForm.public": "Vidljiv svima komantar",
     "CommentsForm.content": "Ako unesete validnu email adresu sistem ce vam poslati zahvalnicu na vas email.",
     "CommentsForm.checkboxContent": "Odaberite da li zelite da komentar bude vidljiv svim posetiocima ili samo administratoru/autoru/Predrag Stosic",
-    "CommentsForm.Send": "Posalji"
+    "CommentsForm.Send": "Posalji",
+    "CommentsSection.Send": "Komantari",
+    "CommentsSection.Posted": "Objavljeno"
 }

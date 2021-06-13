@@ -24,5 +24,7 @@
     "CommentsForm.public": "die Öffentlichkeit",
     "CommentsForm.content": "Wenn Sie eine gültige E-Mail-Adresse eingeben, sendet Ihnen das System einen Dankesbrief an Ihre E-Mail.",
     "CommentsForm.checkboxContent": "Wählen Sie, ob der Kommentar für alle Besucher oder nur für den Administrator / Autor / Predrag Stošić sichtbar sein soll",
-    "CommentsForm.Send": "Senden"
+    "CommentsForm.Send": "Senden",
+    "CommentsSection.Send": "Bemerkungen",
+    "CommentsSection.Posted": "Gesendet"
 }

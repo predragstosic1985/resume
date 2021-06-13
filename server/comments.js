@@ -46,6 +46,7 @@ router.post("/create", urlencodedParser, async function (req, res) {
       name: req.body.name,
       email: req.body.email,
       comment: req.body.comment,
+      date: new Date(),
     });
     res.status(200).json({ message: "done" });
     console.log(req.body);
