@@ -5,13 +5,11 @@ import Footer from "./Footer";
 import NavBar from "./NavBar";
 import ParallaxComponent from "./ParallaxComponent";
 import CommentsSection from "./CommentsSection";
-import CommentsModal from "./CommentsModal";
-import CommentsButton from "./CommentButton";
 
 const WebSite = () => {
   /* eslint-disable no-unused-vars */
   const [selectedTab, setSelectedTab] = useState(null);
-  const [openModal, setOpenModal] = useState(false);
+
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(null);
 
@@ -33,10 +31,6 @@ const WebSite = () => {
     setIsMobileDrawerOpen(false);
   }, [setIsMobileDrawerOpen]);
 
-  const handleOpen = () => {
-    setOpenModal(true);
-  };
-
   return (
     <>
       <NavBar
@@ -52,10 +46,8 @@ const WebSite = () => {
       <HeadSection />
       <FeatureSection />
       <ParallaxComponent />
-      <CommentsButton handleOpen={handleOpen} />
       <CommentsSection />
       <Footer />
-      <CommentsModal openModal={openModal} setOpenModal={setOpenModal} />
     </>
   );
 };

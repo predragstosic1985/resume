@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
 import Avatar from "react-avatar";
 import Grid from "@material-ui/core/Grid";
+import CommentsButton from "./CommentButton";
 import styles from "./style/CommentsSection.module.scss";
 import useFetch from "../hooks/Fetcher";
 import { getComments } from "../commentsServices";
 import moment from "moment";
 import { FormattedMessage } from "react-intl";
+import CommentsModal from "./CommentsModal";
 
 export default function CommentsSection() {
   const [
@@ -17,6 +19,8 @@ export default function CommentsSection() {
     setRetrivedComments,
   ] = useFetch(getComments.bind(null), false);
 
+  const [openModal, setOpenModal] = useState(false);
+
   const formatDate = (date) => {
     const initialDate = new Date(1970, 0, 1); // Epoch
     initialDate.setSeconds(date._seconds);
@@ -24,14 +28,21 @@ export default function CommentsSection() {
     return formatedDate;
   };
 
+  const handleOpen = () => {
+    setOpenModal(true);
+  };
+
   return (
     <div className={styles.containerComment}>
-      <h1>
-        <FormattedMessage
-          id="CommentsSection.Comments"
-          defaultMessage="Comments"
-        />
-      </h1>
+      <div className={styles.headerComments}>
+        <h1>
+          <FormattedMessage
+            id="CommentsSection.Comments"
+            defaultMessage="Comments"
+          />
+        </h1>
+        <CommentsButton handleOpen={handleOpen} />
+      </div>
       {retrivedComments ? (
         retrivedComments.map((comm, index) => {
           const { name, email, comment, date } = comm;
@@ -68,6 +79,8 @@ export default function CommentsSection() {
       ) : (
         <div />
       )}
+
+      <CommentsModal openModal={openModal} setOpenModal={setOpenModal} />
     </div>
   );
 }
