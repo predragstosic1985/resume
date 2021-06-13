@@ -23,14 +23,22 @@ router.get("/read", (req, res) => {
   })();
 });
 
-// read item
-router.get("/read/:id", (req, res) => {
+// read one
+router.get("/read/:name/:email", (req, res) => {
   (async () => {
     try {
-      const document = db.collection("comments").doc(req.params.id);
-      let item = await document.get();
-      let response = item.data();
-      return res.status(200).send(response);
+      let comments = [];
+      const commentsDB = await db
+        .collection("comments")
+        .where("name", "==", req.params.name)
+        .where("email", "==", req.params.email)
+        .get();
+      if (commentsDB.docs.length > 0) {
+        for (const comment of commentsDB.docs) {
+          comments.push(comment.data());
+        }
+      }
+      res.json(comments);
     } catch (error) {
       console.log(error);
       return res.status(500).send(error);
@@ -49,7 +57,6 @@ router.post("/create", urlencodedParser, async function (req, res) {
       date: new Date(),
     });
     res.status(200).json({ message: "done" });
-    console.log(req.body);
   } catch (error) {
     console.log("error nesto");
     return res.status(500).send(error);

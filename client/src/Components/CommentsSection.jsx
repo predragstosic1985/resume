@@ -3,23 +3,26 @@ import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
 import Avatar from "react-avatar";
 import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import EditIcon from "@material-ui/icons/Edit";
 import CommentsButton from "./CommentButton";
 import styles from "./style/CommentsSection.module.scss";
 import useFetch from "../hooks/Fetcher";
-import { getComments } from "../commentsServices";
+import { getComments, getCommentByEmail } from "../commentsServices";
 import moment from "moment";
 import { FormattedMessage } from "react-intl";
 import CommentsModal from "./CommentsModal";
 
 export default function CommentsSection() {
+  const [openModal, setOpenModal] = useState(false);
+  const [details, setDetails] = useState(false);
+
   const [
     retrivedComments,
     loadRetrivedComments,
     reFetchetrivedComments,
     setRetrivedComments,
   ] = useFetch(getComments.bind(null), false);
-
-  const [openModal, setOpenModal] = useState(false);
 
   const formatDate = (date) => {
     const initialDate = new Date(1970, 0, 1); // Epoch
@@ -30,6 +33,15 @@ export default function CommentsSection() {
 
   const handleOpen = () => {
     setOpenModal(true);
+  };
+
+  const handleOpenEdit = async (data) => {
+    const response = await getCommentByEmail(data, data.email);
+    console.log(response);
+    if (response) {
+      setDetails(response.data[0]);
+      setOpenModal(true);
+    }
   };
 
   return (
@@ -60,7 +72,17 @@ export default function CommentsSection() {
                     />
                   </Grid>
                   <Grid item xs zeroMinWidth>
-                    <h4 style={{ margin: 0, textAlign: "left" }}>{name}</h4>
+                    <div className={styles.headerComments}>
+                      <h4 style={{ margin: 0, textAlign: "left" }}>{name} </h4>
+
+                      <IconButton
+                        className={styles.containerCommentBtn}
+                        onClick={() => handleOpenEdit(comm)}
+                        aria-label="add to shopping cart"
+                      >
+                        <EditIcon />
+                      </IconButton>
+                    </div>
                     <p style={{ textAlign: "left" }}>{comment}</p>
                     <p style={{ textAlign: "left", color: "gray" }}>
                       <FormattedMessage
@@ -80,7 +102,12 @@ export default function CommentsSection() {
         <div />
       )}
 
-      <CommentsModal openModal={openModal} setOpenModal={setOpenModal} />
+      <CommentsModal
+        setDetails={setDetails}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        details={details}
+      />
     </div>
   );
 }

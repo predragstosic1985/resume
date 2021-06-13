@@ -26,6 +26,7 @@
     "CommentsForm.content": "If you enter a valid email address the system will send you a thank you note to your email.",
     "CommentsForm.checkboxContent": "Choose whether you want the comment to be visible to all visitors or only to the administrator/author/Predrag Stosic",
     "CommentsForm.Send": "Send",
+    "CommentsForm.Cancel": "Cancel",
     "CommentsSection.Send": "Comments",
     "CommentsSection.Posted": "Posted",
     "CommentsButton.Add": "Add comment"

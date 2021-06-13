@@ -17,7 +17,24 @@ export const postComment = async (comment) => {
   return data;
 };
 
-export const getComments = async (comment) => {
+export const getComments = async () => {
   const data = await axios.get(`${baseLink}/api/comments/read`);
+  return data;
+};
+
+export const getCommentByEmail = async (comment) => {
+  // const data = await axios.get(`${baseLink}/api/comments/readbyId`, comment);
+  // return data;
+
+  let axiosConfig = {
+    headers: {
+      "content-type": "application/json",
+    },
+  };
+
+  const data = await axios.get(
+    `${baseLink}/api/comments/read/${comment.name}/${comment.email}`,
+    axiosConfig
+  );
   return data;
 };
