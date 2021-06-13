@@ -16,13 +16,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const initialfetch = async () => {
-      const fetchData = await fetch("/api/comments/read").then((res) =>
-        res.json()
-      );
-      setFireBaseTest(fetchData[0].id);
-    };
-    initialfetch();
+    // const initialfetch = async () => {
+    //   const fetchData = await fetch("/api/comments/read").then((res) =>
+    //     res.json()
+    //   );
+    //   setFireBaseTest(fetchData[0].id);
+    // };
+    // initialfetch();
   }, []);
 
   console.log(fireBaseTest);

@@ -8,19 +8,14 @@ const db = admin.firestore();
 router.get("/read", (req, res) => {
   (async () => {
     try {
-      let query = db.collection("comments");
-      let response = [];
-      await query.get().then((querySnapshot) => {
-        let docs = querySnapshot.docs;
-        for (let doc of docs) {
-          const selectedItem = {
-            id: doc.id,
-            item: doc.data().item,
-          };
-          response.push(selectedItem);
+      let comments = [];
+      const commentsDB = await db.collection("comments").get();
+      if (commentsDB.docs.length > 0) {
+        for (const comment of commentsDB.docs) {
+          comments.push(comment.data());
         }
-      });
-      return res.status(200).send(response);
+      }
+      res.json(comments);
     } catch (error) {
       console.log(error);
       return res.status(500).send(error);
@@ -53,7 +48,9 @@ router.post("/create", urlencodedParser, async function (req, res) {
       comment: req.body.comment,
     });
     res.status(200).json({ message: "done" });
+    console.log(req.body);
   } catch (error) {
+    console.log("error nesto");
     return res.status(500).send(error);
   }
 });

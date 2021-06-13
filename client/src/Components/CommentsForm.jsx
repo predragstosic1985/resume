@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -9,19 +9,8 @@ import Container from "@material-ui/core/Container";
 import { FormattedMessage } from "react-intl";
 import CommentsFormHeader from "./AdditionalComponents/CommentsFormHeader";
 import CommentsFormCheckBox from "./AdditionalComponents/CommentsFormCheckBox";
-
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="textSecondary" align="center">
-//       {"Neki string © "}
-//       <Link color="inherit" href="/">
-//         Link za neki website
-//       </Link>{" "}
-//       {new Date().getFullYear()}
-//       {"."}
-//     </Typography>
-//   );
-// }
+import { postComment, getComments } from "../commentsServices";
+import useFetch from "../hooks/Fetcher";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -45,6 +34,32 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CommentsForm() {
   const classes = useStyles();
+  const [
+    retrivedComments,
+    loadRetrivedComments,
+    reFetchetrivedComments,
+    setRetrivedComments,
+  ] = useFetch(getComments(), true);
+  const [comment, setComment] = useState({
+    name: "",
+    email: "",
+    comment: "",
+  });
+
+  const handleOnChange = (e, data) => {
+    const { name, value } = e.target;
+    setComment({ ...comment, [name]: value });
+  };
+
+  const submitComment = async () => {
+    const response = await postComment(comment);
+    if (response) {
+      console.log("success");
+      reFetchetrivedComments();
+    } else {
+      console.log("err");
+    }
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -54,28 +69,15 @@ export default function CommentsForm() {
           <MessageIcon />
         </Avatar>
         <CommentsFormHeader />
-        {/* <Typography component="h1" variant="h5">
-          <FormattedMessage
-            id="CommentsForm.header"
-            defaultMessage="Komentar"
-          />
-        </Typography> */}
+
         <form className={classes.form} noValidate>
-          {/* <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label={
-              <FormattedMessage
-                id="CommentsForm.public"
-                defaultMessage="public"
-              />
-            }
-          /> */}
           <CommentsFormCheckBox />
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
+            onChange={handleOnChange}
             label={
               <FormattedMessage
                 id="CommentsForm.nameComment"
@@ -99,6 +101,7 @@ export default function CommentsForm() {
               />
             }
             name="email"
+            onChange={handleOnChange}
             autoComplete="email"
             autoFocus
           />
@@ -109,31 +112,29 @@ export default function CommentsForm() {
             fullWidth
             multiline
             rows={4}
-            id="text"
+            id="comment"
             label={
               <FormattedMessage
                 id="CommentsForm.comment"
                 defaultMessage="commnet"
               />
             }
-            name="text"
+            name="comment"
+            onChange={handleOnChange}
             autoComplete="off"
             autoFocus
           />
           <Button
-            type="submit"
             fullWidth
             variant="contained"
             color="primary"
+            onClick={submitComment}
             className={classes.submit}
           >
             <FormattedMessage id="CommentsForm.Send" defaultMessage="Send" />
           </Button>
         </form>
       </div>
-      {/* <Box mt={8}>
-        <Copyright />
-      </Box> */}
     </Container>
   );
 }
