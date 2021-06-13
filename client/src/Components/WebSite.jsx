@@ -5,8 +5,8 @@ import Footer from "./Footer";
 import NavBar from "./NavBar";
 import ParallaxComponent from "./ParallaxComponent";
 import CommentsSection from "./CommentsSection";
-import CommentsForm from "./CommentsForm";
 import CommentsModal from "./CommentsModal";
+import CommentsButton from "./CommentButton";
 
 const WebSite = () => {
   /* eslint-disable no-unused-vars */
@@ -52,9 +52,7 @@ const WebSite = () => {
       <HeadSection />
       <FeatureSection />
       <ParallaxComponent />
-      <button type="button" onClick={handleOpen}>
-        Open Modal
-      </button>
+      <CommentsButton handleOpen={handleOpen} />
       <CommentsSection />
       <Footer />
       <CommentsModal openModal={openModal} setOpenModal={setOpenModal} />

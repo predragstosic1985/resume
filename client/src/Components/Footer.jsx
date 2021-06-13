@@ -166,7 +166,7 @@ function Footer(props) {
       <div className={classes.footerInner}>
         <Grid container spacing={isWidthUp("md", width) ? 10 : 5}>
           <Grid item xs={12} md={6} lg={4}>
-            <form>
+            {/* <form>
               <Typography
                 className={classes.whiteBg}
                 variant={"h5"}
@@ -203,7 +203,7 @@ function Footer(props) {
                   />
                 </ColoredButton>
               </Box>
-            </form>
+            </form> */}
           </Grid>
           <Hidden mdDown>
             <Grid item xs={12} md={6} lg={4}>

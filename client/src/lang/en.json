@@ -27,5 +27,6 @@
     "CommentsForm.checkboxContent": "Choose whether you want the comment to be visible to all visitors or only to the administrator/author/Predrag Stosic",
     "CommentsForm.Send": "Send",
     "CommentsSection.Send": "Comments",
-    "CommentsSection.Posted": "Posted"
+    "CommentsSection.Posted": "Posted",
+    "CommentsButton.Add": "Add comment"
 }

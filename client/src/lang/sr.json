@@ -27,5 +27,6 @@
     "CommentsForm.checkboxContent": "Odaberite da li zelite da komentar bude vidljiv svim posetiocima ili samo administratoru/autoru/Predrag Stosic",
     "CommentsForm.Send": "Posalji",
     "CommentsSection.Send": "Komantari",
-    "CommentsSection.Posted": "Objavljeno"
+    "CommentsSection.Posted": "Objavljeno",
+    "CommentsButton.Add": "Dodaj komentar"
 }
