@@ -17,8 +17,12 @@
     "Footer.network": "Soziale Netzwerke",
     "Footer.networkMore": "Weitere Infos über mich in sozialen Netzwerken.",
     "Parallax.tech": "Neuestes technologisches Interesse",
+    "CommentsForm.nameComment": "Name/Spitzname",
+    "CommentsForm.header": "Hinterlasse einen Kommentar",
+    "CommentsForm.email": "E-mail",
     "CommentsForm.comment": "Schreiben Sie Ihren Kommentar",
     "CommentsForm.public": "die Öffentlichkeit",
     "CommentsForm.content": "Wenn Sie eine gültige E-Mail-Adresse eingeben, sendet Ihnen das System einen Dankesbrief an Ihre E-Mail.",
-    "CommentsForm.checkboxContent": "Wählen Sie, ob der Kommentar für alle Besucher oder nur für den Administrator / Autor / Predrag Stošić sichtbar sein soll"
+    "CommentsForm.checkboxContent": "Wählen Sie, ob der Kommentar für alle Besucher oder nur für den Administrator / Autor / Predrag Stošić sichtbar sein soll",
+    "CommentsForm.Send": "Senden"
 }

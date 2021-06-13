@@ -76,6 +76,21 @@ export default function CommentsForm() {
             margin="normal"
             required
             fullWidth
+            label={
+              <FormattedMessage
+                id="CommentsForm.nameComment"
+                defaultMessage="Name/Nickname"
+              />
+            }
+            name="name"
+            autoComplete="off"
+            autoFocus
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
             id="email"
             label={
               <FormattedMessage
@@ -112,7 +127,7 @@ export default function CommentsForm() {
             color="primary"
             className={classes.submit}
           >
-            Send
+            <FormattedMessage id="CommentsForm.Send" defaultMessage="Send" />
           </Button>
         </form>
       </div>

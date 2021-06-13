@@ -14,7 +14,7 @@ export default function CommentsSection() {
   return (
     <div className={styles.containerComment}>
       <h1>Comments</h1>
-      <Paper className={styles.Paper}>
+      <Paper className={styles.paperStyle}>
         <Grid container wrap="nowrap" spacing={2}>
           <Grid item>
             <Avatar alt="Remy Sharp" src={imgLink} />
