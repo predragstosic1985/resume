@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const functions = require("firebase-functions");
+// const functions = require("firebase-functions");
 const admin = require("firebase-admin");
-var serviceAccount = require("./permissions.json");
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL:
-    "https://resumedb-cbfc1-default-rtdb.europe-west1.firebasedatabase.app",
-});
+// var serviceAccount = require("./permissions.json");
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL:
+//     "https://resumedb-cbfc1-default-rtdb.europe-west1.firebasedatabase.app",
+// });
 const db = admin.firestore();
 
 const data = {

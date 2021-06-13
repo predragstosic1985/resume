@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     const initialfetch = async () => {
-      const fetchData = await fetch("/api/hello/read").then((res) =>
+      const fetchData = await fetch("/api/comments/read").then((res) =>
         res.json()
       );
       setFireBaseTest(fetchData[0].id);
@@ -35,7 +35,6 @@ function App() {
         <WebSite />
       </MuiThemeProvider>
       {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>{!data ? "Loading..." : data}</p>
         <p>{!fireBaseTest ? "Loading from firebase..." : fireBaseTest}</p>
       </header> */}
