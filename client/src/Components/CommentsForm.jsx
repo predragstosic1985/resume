@@ -130,7 +130,7 @@ export default function CommentsForm({
             label={
               <FormattedMessage
                 id="CommentsForm.comment"
-                defaultMessage="commnet"
+                defaultMessage="comenet"
               />
             }
             name="comment"

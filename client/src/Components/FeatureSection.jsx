@@ -17,6 +17,9 @@ import calculateSpacing from "./Utils/calculateSpacing";
 import FeatureCard from "./AdditionalComponents/FeatureCard";
 import { FormattedMessage } from "react-intl";
 import moduleStyles from "./style/FeatureSection.module.scss";
+import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
+import FilterHdrIcon from "@material-ui/icons/FilterHdr";
+import MarkunreadMailboxIcon from "@material-ui/icons/MarkunreadMailbox";
 
 const iconSize = 30;
 
@@ -44,6 +47,30 @@ const features = [
     headline: "React",
     text: <FormattedMessage id="FeatureSection.react" defaultMessage="React" />,
     icon: <ComputerIcon style={{ fontSize: iconSize }} />,
+    mdDelay: "200",
+    smDelay: "200",
+  },
+  {
+    color: "#00b5ad",
+    headline: "Semantic UI",
+    text: <FormattedMessage id="FeatureSection.react" defaultMessage="React" />,
+    icon: <LocalLibraryIcon style={{ fontSize: iconSize }} />,
+    mdDelay: "200",
+    smDelay: "200",
+  },
+  {
+    color: "#1976d2",
+    headline: "Matirial UI",
+    text: <FormattedMessage id="FeatureSection.react" defaultMessage="React" />,
+    icon: <FilterHdrIcon style={{ fontSize: iconSize }} />,
+    mdDelay: "200",
+    smDelay: "200",
+  },
+  {
+    color: "#FF5616",
+    headline: "React UI5 webcomponents",
+    text: <FormattedMessage id="FeatureSection.react" defaultMessage="React" />,
+    icon: <MarkunreadMailboxIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "200",
   },
