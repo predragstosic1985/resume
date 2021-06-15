@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -10,6 +10,7 @@ import Container from "@material-ui/core/Container";
 import { FormattedMessage } from "react-intl";
 import CommentsFormHeader from "./AdditionalComponents/CommentsFormHeader";
 import { postComment, updateComment } from "../commentsServices";
+import { isEmpty } from "lodash";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -26,9 +27,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
-  // submit: {
-  //   margin: theme.spacing(3, 0, 2),
-  // },
 }));
 
 export default function CommentsForm({
@@ -45,12 +43,35 @@ export default function CommentsForm({
     comment: "",
   };
 
+  const [inputsError, setInputsError] = useState({});
   const [comment, setComment] = useState(details ? details : initState);
+
+  useEffect(() => {
+    const errors = { ...inputsError };
+    Object.keys(errors).forEach((propName) => {
+      if (!isEmpty(comment[propName])) {
+        delete errors[propName];
+      }
+    });
+    setInputsError(errors);
+  }, [comment]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleClose = () => {
     setDetails();
     setComment(initState);
     setOpenModal(false);
+  };
+
+  const onSubmit = () => {
+    const errors = {};
+    Object.keys(comment).forEach((propName) => {
+      if (isEmpty(comment[propName])) {
+        if (propName !== "id") {
+          errors[propName] = { content: "Please add a value" };
+        }
+      }
+    });
+    isEmpty(errors) ? submitComment(comment) : setInputsError(errors);
   };
 
   const submitComment = async () => {
@@ -89,6 +110,17 @@ export default function CommentsForm({
             required
             fullWidth
             onChange={handleOnChange}
+            error={inputsError.name ? true : false}
+            helperText={
+              inputsError.name ? (
+                <FormattedMessage
+                  id="CommentsForm.nameValidation"
+                  defaultMessage="Name/Nickname"
+                />
+              ) : (
+                ""
+              )
+            }
             label={
               <FormattedMessage
                 id="CommentsForm.nameComment"
@@ -106,6 +138,17 @@ export default function CommentsForm({
             required
             fullWidth
             id="email"
+            error={inputsError.email ? true : false}
+            helperText={
+              inputsError.email ? (
+                <FormattedMessage
+                  id="CommentsForm.emailValidation"
+                  defaultMessage="email"
+                />
+              ) : (
+                ""
+              )
+            }
             value={comment.email}
             label={
               <FormattedMessage
@@ -126,6 +169,17 @@ export default function CommentsForm({
             multiline
             rows={4}
             value={comment.comment}
+            error={inputsError.comment ? true : false}
+            helperText={
+              inputsError.comment ? (
+                <FormattedMessage
+                  id="CommentsForm.commentValidation"
+                  defaultMessage="email"
+                />
+              ) : (
+                ""
+              )
+            }
             id="comment"
             label={
               <FormattedMessage
@@ -147,7 +201,7 @@ export default function CommentsForm({
             </Button>
             <Button
               color="primary"
-              onClick={submitComment}
+              onClick={onSubmit}
               className={classes.submit}
             >
               <FormattedMessage id="CommentsForm.Send" defaultMessage="Send" />
