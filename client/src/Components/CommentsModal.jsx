@@ -22,6 +22,7 @@ export default function DraggableDialog({
   details,
   openModal,
   setOpenModal,
+  reFetchetrivedComments,
 }) {
   return (
     <div>
@@ -33,6 +34,7 @@ export default function DraggableDialog({
         <DialogContent>
           <DialogContentText>
             <CommentsForm
+              reFetchetrivedComments={reFetchetrivedComments}
               setDetails={setDetails}
               details={details}
               openModal={openModal}

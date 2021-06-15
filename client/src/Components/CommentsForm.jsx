@@ -5,13 +5,11 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import MessageIcon from "@material-ui/icons/Message";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
-import Backdrop from "@material-ui/core/Backdrop";
-import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { FormattedMessage } from "react-intl";
 import CommentsFormHeader from "./AdditionalComponents/CommentsFormHeader";
-import { postComment, getComments } from "../commentsServices";
+import { postComment } from "../commentsServices";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -33,7 +31,12 @@ const useStyles = makeStyles((theme) => ({
   // },
 }));
 
-export default function CommentsForm({ setDetails, details, setOpenModal }) {
+export default function CommentsForm({
+  setDetails,
+  details,
+  setOpenModal,
+  reFetchetrivedComments,
+}) {
   const classes = useStyles();
 
   const initState = {
@@ -53,7 +56,7 @@ export default function CommentsForm({ setDetails, details, setOpenModal }) {
   const submitComment = async () => {
     const response = await postComment(comment);
     if (response) {
-      //   await reFetchetrivedComments();
+      await reFetchetrivedComments();
       setOpenModal(false);
       setComment(initState);
     } else {
@@ -68,9 +71,6 @@ export default function CommentsForm({ setDetails, details, setOpenModal }) {
 
   return (
     <Container component="main" maxWidth="xs">
-      {/* <Backdrop className={classes.backdrop} open={true}>
-        <CircularProgress color="inherit" />
-      </Backdrop> */}
       <CssBaseline />
 
       <div className={classes.paper}>

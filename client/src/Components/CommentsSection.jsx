@@ -12,10 +12,22 @@ import { getComments, getCommentByEmail } from "../commentsServices";
 import moment from "moment";
 import { FormattedMessage } from "react-intl";
 import CommentsModal from "./CommentsModal";
+import Backdrop from "@material-ui/core/Backdrop";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { makeStyles } from "@material-ui/core/styles";
 
 export default function CommentsSection() {
   const [openModal, setOpenModal] = useState(false);
   const [details, setDetails] = useState(false);
+
+  const useStyles = makeStyles((theme) => ({
+    backdrop: {
+      zIndex: theme.zIndex.drawer + 1,
+      color: "#fff",
+    },
+  }));
+
+  const classes = useStyles();
 
   const [
     retrivedComments,
@@ -60,6 +72,12 @@ export default function CommentsSection() {
           const { name, email, comment, date } = comm;
           return (
             <div key={index}>
+              <Backdrop
+                className={classes.backdrop}
+                open={loadRetrivedComments}
+              >
+                <CircularProgress color="inherit" />
+              </Backdrop>
               <Paper className={styles.paperStyle}>
                 <Grid container wrap="nowrap" spacing={2}>
                   <Grid item>
@@ -107,6 +125,9 @@ export default function CommentsSection() {
         openModal={openModal}
         setOpenModal={setOpenModal}
         details={details}
+        reFetchetrivedComments={reFetchetrivedComments}
+        loadRetrivedComments={loadRetrivedComments}
+        setRetrivedComments={setRetrivedComments}
       />
     </div>
   );
