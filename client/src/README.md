@@ -30,10 +30,8 @@ The build is minified and the filenames include the hashes.\
 
 **Note: ostalo da se uradi**
 
-Comments section
 jezik setup
 Login
 Projects section
 povezati sa drustvenim mrezama
-Testovi opciono
 depoly

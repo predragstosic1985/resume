@@ -53,15 +53,19 @@ const features = [
   {
     color: "#00b5ad",
     headline: "Semantic UI",
-    text: <FormattedMessage id="FeatureSection.react" defaultMessage="React" />,
+    text: (
+      <FormattedMessage id="FeatureSection.Semantic" defaultMessage="React" />
+    ),
     icon: <LocalLibraryIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "200",
   },
   {
     color: "#1976d2",
-    headline: "Matirial UI",
-    text: <FormattedMessage id="FeatureSection.react" defaultMessage="React" />,
+    headline: "Material UI",
+    text: (
+      <FormattedMessage id="FeatureSection.Material" defaultMessage="React" />
+    ),
     icon: <FilterHdrIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "200",
@@ -69,7 +73,12 @@ const features = [
   {
     color: "#FF5616",
     headline: "React UI5 webcomponents",
-    text: <FormattedMessage id="FeatureSection.react" defaultMessage="React" />,
+    text: (
+      <FormattedMessage
+        id="FeatureSection.webcomponents"
+        defaultMessage="React"
+      />
+    ),
     icon: <MarkunreadMailboxIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "200",
