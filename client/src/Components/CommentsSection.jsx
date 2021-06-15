@@ -8,7 +8,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import CommentsButton from "./CommentButton";
 import styles from "./style/CommentsSection.module.scss";
 import useFetch from "../hooks/Fetcher";
-import { getComments, getCommentByEmail } from "../commentsServices";
+import { getComments, getCommentById } from "../commentsServices";
 import moment from "moment";
 import { FormattedMessage } from "react-intl";
 import CommentsModal from "./CommentsModal";
@@ -48,10 +48,9 @@ export default function CommentsSection() {
   };
 
   const handleOpenEdit = async (data) => {
-    const response = await getCommentByEmail(data, data.email);
-    console.log(response);
+    const response = await getCommentById(data);
     if (response) {
-      setDetails(response.data[0]);
+      setDetails(response.data);
       setOpenModal(true);
     }
   };

@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { FormattedMessage } from "react-intl";
 import CommentsFormHeader from "./AdditionalComponents/CommentsFormHeader";
-import { postComment } from "../commentsServices";
+import { postComment, updateComment } from "../commentsServices";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -54,7 +54,9 @@ export default function CommentsForm({
   };
 
   const submitComment = async () => {
-    const response = await postComment(comment);
+    const response = comment.docID
+      ? await updateComment(comment.docID, comment)
+      : await postComment(comment);
     if (response) {
       await reFetchetrivedComments();
       setOpenModal(false);

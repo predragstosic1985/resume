@@ -22,7 +22,7 @@ export const getComments = async () => {
   return data;
 };
 
-export const getCommentByEmail = async (comment) => {
+export const getCommentById = async (comment) => {
   // const data = await axios.get(`${baseLink}/api/comments/readbyId`, comment);
   // return data;
 
@@ -33,8 +33,16 @@ export const getCommentByEmail = async (comment) => {
   };
 
   const data = await axios.get(
-    `${baseLink}/api/comments/read/${comment.name}/${comment.email}`,
+    `${baseLink}/api/comments/read/${comment.docID}`,
     axiosConfig
+  );
+  return data;
+};
+
+export const updateComment = async (docID, comment) => {
+  const data = await axios.put(
+    `${baseLink}/api/comments/update/${docID}`,
+    comment
   );
   return data;
 };

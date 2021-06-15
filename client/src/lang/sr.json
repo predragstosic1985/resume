@@ -28,6 +28,7 @@
     "CommentsForm.Send": "Posalji",
     "CommentsForm.Cancel": "Otkazi",
     "CommentsSection.Send": "Komantari",
+    "CommentsSection.Comments": "Komantari",
     "CommentsSection.Posted": "Objavljeno",
     "CommentsButton.Add": "Dodaj komentar"
 }
