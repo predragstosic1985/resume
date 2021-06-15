@@ -15,15 +15,18 @@ switch (local) {
   case local === "en":
     lang = English;
     break;
+  case local === "sr":
+    lang = Serbian;
+    break;
   case local === "fr":
     lang = French;
     break;
   case local === "de":
-    lang = English;
+    lang = German;
     break;
 
   default:
-    lang = Serbian;
+    lang = English;
     break;
 }
 
@@ -33,8 +36,8 @@ const Wrapper = (props) => {
   const [messages, setMessages] = useState(lang);
 
   function selectLanguage(e, data) {
-    // const newLocale = e.target.value;
-    const newLocale = data.value;
+    const newLocale = e.target.value;
+    // const newLocale = data.value;
     setLocale(newLocale);
     if (newLocale === "en") {
       setMessages(English);
@@ -42,10 +45,11 @@ const Wrapper = (props) => {
       if (newLocale === "fr") {
         setMessages(French);
       }
+      if (newLocale === "sr") {
+        setMessages(Serbian);
+      }
       if (newLocale === "de") {
         setMessages(German);
-      } else {
-        setMessages(Serbian);
       }
     }
   }

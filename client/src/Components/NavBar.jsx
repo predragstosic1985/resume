@@ -1,20 +1,20 @@
-import React, { memo } from "react";
+import React, { memo, useContext } from "react";
 import PropTypes from "prop-types";
 import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
   Hidden,
   IconButton,
   withStyles,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import HomeIcon from "@material-ui/icons/Home";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import BookIcon from "@material-ui/icons/Book";
-import NavigationDrawer from "./AdditionalComponents/NavigationDrawer";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+import MenuItem from "@material-ui/core/MenuItem";
+import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
+import { Context } from "../Wrapper/Wrapper";
 
 const styles = (theme) => ({
   appBar: {
@@ -36,6 +36,14 @@ const styles = (theme) => ({
   noDecoration: {
     textDecoration: "none !important",
   },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: "7rem",
+    width: "7rem",
+  },
+  btnLogut: {
+    margin: theme.spacing(1),
+  },
 });
 
 function NavBar(props) {
@@ -47,23 +55,13 @@ function NavBar(props) {
     mobileDrawerOpen,
     selectedTab,
   } = props;
-  const menuItems = [
-    {
-      link: "/",
-      name: "Home",
-      icon: <HomeIcon className="text-white" />,
-    },
-    {
-      link: "/language",
-      name: "Language",
-      icon: <BookIcon className="text-white" />,
-    },
-    {
-      name: "Logout",
-      onClick: openLoginDialog,
-      icon: <LockOpenIcon className="text-white" />,
-    },
-  ];
+
+  const context = useContext(Context);
+
+  // const handleChange = (e, data) => {
+  //   console.log(e, data, context.selectLanguage);
+  // };
+
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
@@ -97,50 +95,33 @@ function NavBar(props) {
               </IconButton>
             </Hidden>
             <Hidden smDown>
-              {menuItems.map((element) => {
-                if (element.link) {
-                  return (
-                    <Router key={element.name}>
-                      <Link
-                        key={element.name}
-                        to={element.link}
-                        className={classes.noDecoration}
-                        onClick={handleMobileDrawerClose}
-                      >
-                        <Button
-                          color="secondary"
-                          size="large"
-                          classes={{ text: classes.menuButtonText }}
-                        >
-                          {element.name}
-                        </Button>
-                      </Link>
-                    </Router>
-                  );
-                }
-                return (
-                  <Button
-                    color="secondary"
-                    size="large"
-                    onClick={element.onClick}
-                    classes={{ text: classes.menuButtonText }}
-                    key={element.name}
-                  >
-                    {element.name}
-                  </Button>
-                );
-              })}
+              <FormControl variant="outlined" className={classes.formControl}>
+                <InputLabel htmlFor="outlined-age-native-simple">
+                  Language
+                </InputLabel>
+                <Select
+                  value={context.locale === "en-US" ? "en" : context.locale}
+                  onChange={context.selectLanguage}
+                  label="Language"
+                >
+                  <MenuItem value="en">English</MenuItem>
+                  <MenuItem value="de">German</MenuItem>
+                  <MenuItem value="sr">Serbian</MenuItem>
+                </Select>
+              </FormControl>
+              <IconButton aria-label="Logout" className={classes.btnLogut}>
+                <PowerSettingsNewIcon />
+              </IconButton>
             </Hidden>
           </div>
         </Toolbar>
       </AppBar>
-      <NavigationDrawer
-        menuItems={menuItems}
+      {/* <NavigationDrawer
         anchor="right"
         open={mobileDrawerOpen}
         selectedItem={selectedTab}
         onClose={handleMobileDrawerClose}
-      />
+      /> */}
     </div>
   );
 }
