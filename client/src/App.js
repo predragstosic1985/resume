@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import theme from "./theme";
 import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
-import WebSite from "./Components/WebSite";
 import GlobalStyles from "./GlobalStyles";
+import AppRouter from "./Components/AppRouter";
 
 function App() {
   // eslint-disable-next-line
@@ -32,7 +32,7 @@ function App() {
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <GlobalStyles />
-        <WebSite />
+        <AppRouter />
       </MuiThemeProvider>
       {/* <header className="App-header">
         <p>{!data ? "Loading..." : data}</p>
