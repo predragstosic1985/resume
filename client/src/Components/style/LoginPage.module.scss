@@ -1,113 +1,202 @@
-.container {
-  background-image: url("../../Assets/images/web_developer.jpg");
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: flex-start;
+  background: url("https://source.unsplash.com/1600x900/?wallpapers/1600x900");
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100vh !important;
-  //   padding-top: 60px;
-  //   padding-bottom: 100px;
 }
 
-.loginRegisterWrapper {
-  height: 560px;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  //   margin-top: 2rem;
-  //   padding-top: 12rem;
-  padding: 0 2em;
-  border-radius: 5px;
-  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+.loginBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24rem;
+  padding: 3rem;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.loginBox h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.loginBox h3 {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #fff;
+  text-align: center;
+}
+
+.loginBox h3:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.loginBox h3:first-of-type {
+  margin-top: -0.5rem;
+}
+
+.loginBox .userBox {
+  position: relative;
+}
+
+.loginBox .userBox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.loginBox .userBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.loginBox .userBox input:focus ~ label,
+.loginBox .userBox input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.loginBox form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
   overflow: hidden;
-  color: #ffffff;
-  background: linear-gradient(
-    180deg,
-    rgba(19, 38, 79, 1) 0%,
-    rgba(22, 147, 198, 1) 52%,
-    rgba(255, 255, 255, 0) 82%
-  );
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  background: transparent;
 }
 
-/* Nav buttons */
-.navButtons {
-  width: 100%;
-  height: 100px;
-  padding-top: 40px;
-  opacity: 1;
-  margin-bottom: 3em;
-}
-button {
-  font-size: 1.5em;
-  margin-right: 1em;
-  border: 0px;
-  cursor: pointer;
-}
-button:focus {
-  outline: 0px;
-}
-button.active {
-  padding-bottom: 10px;
-  border-bottom: solid 2px #1059ff;
-}
-
-/* footer: forgot section */
-.forgot-panel {
-  position: relative;
-  height: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  padding-top: 24px;
-  border-top: solid 1px rgba(255, 255, 255, 0.3);
-}
-
-/* form styling */
-.formGroup input {
-  width: 100%;
-  height: 35px;
-  padding-left: 15px;
-  border: none;
+.loginBox button:hover {
+  background: #03e9f4;
+  color: #fff;
   border-radius: 5px;
-  margin-bottom: 20px;
-  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
 }
-.formGroup label {
-  text-transform: uppercase;
+
+.loginBox button span {
+  position: absolute;
+  display: block;
 }
-input.submit {
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1em;
-  text-align: center;
-  color: rgba(255, 255, 255, 1);
-  padding: 8px 0px;
+
+.loginBox button span:nth-child(1) {
+  top: 0;
+  left: -100%;
   width: 100%;
-  height: 35px;
-  border: none;
-  border-radius: 20px;
-  margin-top: 23px;
-  background-color: rgba(16, 89, 255, 1);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
 }
 
-/*Form positioning and animation */
-
-form#registerform {
-  left: 500px;
-  top: -230px;
-  position: relative;
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
 }
 
-.forgot-panel {
-  margin-top: -300px;
-  color: gray;
+.loginBox button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
 }
 
-form,
-.forgot-panel {
-  position: relative;
-  transition: all 0.5s ease;
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
 }
-#loginBtn,
-#registerBtn {
-  transition: all 0.5s ease;
+
+.loginBox button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.loginBox button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .loginBox {
+    font-size: x-small;
+    width: 20rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .loginBox {
+    font-size: x-small;
+    width: 15rem;
+    padding: 0.5rem;
+  }
 }

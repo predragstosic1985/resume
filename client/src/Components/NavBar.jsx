@@ -15,6 +15,7 @@ import FormControl from "@material-ui/core/FormControl";
 import MenuItem from "@material-ui/core/MenuItem";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import { Context } from "../Wrapper/Wrapper";
+import { useHistory } from "react-router-dom";
 
 const styles = (theme) => ({
   appBar: {
@@ -47,6 +48,7 @@ const styles = (theme) => ({
 });
 
 function NavBar(props) {
+  const history = useHistory();
   const {
     classes,
     openLoginDialog,
@@ -58,9 +60,9 @@ function NavBar(props) {
 
   const context = useContext(Context);
 
-  // const handleChange = (e, data) => {
-  //   console.log(e, data, context.selectLanguage);
-  // };
+  const logutUser = () => {
+    history.push("/");
+  };
 
   return (
     <div className={classes.root}>
@@ -109,7 +111,11 @@ function NavBar(props) {
                   <MenuItem value="sr">Serbian</MenuItem>
                 </Select>
               </FormControl>
-              <IconButton aria-label="Logout" className={classes.btnLogut}>
+              <IconButton
+                aria-label="Logout"
+                className={classes.btnLogut}
+                onClick={logutUser}
+              >
                 <PowerSettingsNewIcon />
               </IconButton>
             </Hidden>

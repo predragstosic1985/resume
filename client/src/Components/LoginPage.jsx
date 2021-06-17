@@ -1,92 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./style/LoginPage.module.scss";
-
-import { useSpring, animated } from "react-spring";
+import Button from "@material-ui/core/Button";
+import RefreshIcon from "@material-ui/icons/Refresh";
+import Backdrop from "@material-ui/core/Backdrop";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { useHistory } from "react-router-dom";
 
 const LoginPage = () => {
-  const [registrationFormStatus, setRegistartionFormStatus] = useState(false);
-  const loginProps = useSpring({
-    left: registrationFormStatus ? -500 : 0, // Login form sliding positions
-  });
-  const registerProps = useSpring({
-    left: registrationFormStatus ? 0 : 500, // Register form sliding positions
-  });
+  const history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const loginBtnProps = useSpring({
-    borderBottom: registrationFormStatus
-      ? "solid 0px transparent"
-      : "solid 2px #1059FF", //Animate bottom border of login button
-  });
-  const registerBtnProps = useSpring({
-    borderBottom: registrationFormStatus
-      ? "solid 2px #1059FF"
-      : "solid 0px transparent", //Animate bottom border of register button
-  });
+  useEffect(() => {
+    if (isLoading) {
+      const timeOutId = setTimeout(() => callRefreshPage(isLoading), 1000);
+      return () => clearTimeout(timeOutId);
+    }
+  }, [isLoading]);
 
-  function registerClicked() {
-    setRegistartionFormStatus(true);
-  }
-  function loginClicked() {
-    setRegistartionFormStatus(false);
-  }
+  const refreshPage = () => {
+    setIsLoading(true);
+  };
+
+  const callRefreshPage = () => {
+    window.location.reload();
+  };
+
+  const onSubmit = () => {
+    history.push("/resume");
+  };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.loginRegisterWrapper}>
-        <div className={styles.navButtons}>
-          <animated.button
-            onClick={loginClicked}
-            id="loginBtn"
-            style={loginBtnProps}
-          >
-            Login
-          </animated.button>
-          <animated.button
-            onClick={registerClicked}
-            id="registerBtn"
-            style={registerBtnProps}
-          >
-            Register
-          </animated.button>
-        </div>
-        <div className={styles.formGroup}>
-          <animated.form action="" id="loginform" style={loginProps}>
-            <LoginForm />
-          </animated.form>
-          <animated.form action="" id="registerform" style={registerProps}>
-            <RegisterForm />
-          </animated.form>
-        </div>
+    <div className={styles.main}>
+      <Button
+        color="secondary"
+        onClick={refreshPage}
+        startIcon={<RefreshIcon />}
+      >
+        change background
+      </Button>
+      <div className={styles.loginBox}>
+        <Backdrop open={isLoading}>
+          <CircularProgress color="secondary" />
+        </Backdrop>
+        <h2>Login</h2>
+        <h3>Hint</h3>
+        <h3>demo/demo</h3>
+
+        <form>
+          <div className={styles.userBox}>
+            <input type="text" name="" required="" />
+            <label>Username</label>
+          </div>
+          <div className={styles.userBox}>
+            <input type="password" name="" required="" />
+            <label>Password</label>
+          </div>
+          <button onClick={onSubmit}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </button>
+        </form>
       </div>
     </div>
-  );
-};
-
-const LoginForm = () => {
-  return (
-    <>
-      <label for="username">USERNAME</label>
-      <input type="text" id="username" />
-      <label for="password">PASSWORD</label>
-      <input type="text" id="password" />
-      <input type="submit" value="submit" className={styles.submit} />
-    </>
-  );
-};
-
-const RegisterForm = () => {
-  return (
-    <>
-      <label for="fullname">full name</label>
-      <input type="text" id="fullname" />
-      <label for="email">email</label>
-      <input type="text" id="email" />
-      <label for="password">password</label>
-      <input type="text" id="password" />
-      <label for="confirmpassword">confirm password</label>
-      <input type="text" id="confirmpassword" />
-      <input type="submit" value="submit" class="submit" />
-    </>
   );
 };
 
