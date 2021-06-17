@@ -68,7 +68,7 @@ export default function CommentsSection() {
       </div>
       {retrivedComments ? (
         retrivedComments.map((comm, index) => {
-          const { name, email, comment, date } = comm;
+          const { name, comment, date } = comm;
           return (
             <div key={index}>
               <Backdrop

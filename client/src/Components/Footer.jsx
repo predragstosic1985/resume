@@ -9,13 +9,11 @@ import {
   withStyles,
   withWidth,
   isWidthUp,
-  TextField,
 } from "@material-ui/core";
 import PhoneIcon from "@material-ui/icons/Phone";
 import MailIcon from "@material-ui/icons/Mail";
 import WaveBorder from "./WaveBorder";
 import transitions from "@material-ui/core/styles/transitions";
-import ColoredButton from "./AdditionalComponents/ColoredButton";
 import { FormattedMessage } from "react-intl";
 
 const styles = (theme) => ({
@@ -165,46 +163,7 @@ function Footer(props) {
       />
       <div className={classes.footerInner}>
         <Grid container spacing={isWidthUp("md", width) ? 10 : 5}>
-          <Grid item xs={12} md={6} lg={4}>
-            {/* <form>
-              <Typography
-                className={classes.whiteBg}
-                variant={"h5"}
-                color="inherit"
-                align="center"
-              >
-                <FormattedMessage
-                  id="Footer.getIn"
-                  defaultMessage="Send Message"
-                />
-              </Typography>
-              <Box display="flex" flexDirection="column">
-                <Box mb={1}>
-                  <TextField
-                    variant="outlined"
-                    multiline
-                    inputProps={{ "aria-label": "Get in Touch" }}
-                    InputProps={{
-                      className: classes.whiteBg,
-                    }}
-                    rows={4}
-                    fullWidth
-                    required
-                  />
-                </Box>
-                <ColoredButton
-                  color={theme.palette.common.white}
-                  variant="outlined"
-                  type="submit"
-                >
-                  <FormattedMessage
-                    id="Footer.send"
-                    defaultMessage="Send Message"
-                  />
-                </ColoredButton>
-              </Box>
-            </form> */}
-          </Grid>
+          <Grid item xs={12} md={6} lg={4}></Grid>
           <Hidden mdDown>
             <Grid item xs={12} md={6} lg={4}>
               <Box display="flex" justifyContent="center">

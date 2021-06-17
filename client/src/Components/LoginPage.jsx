@@ -5,10 +5,31 @@ import RefreshIcon from "@material-ui/icons/Refresh";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { useHistory } from "react-router-dom";
+import { isEmpty, isEqual } from "lodash";
 
 const LoginPage = () => {
   const history = useHistory();
+  const initState = {
+    username: "",
+    password: "",
+  };
+  const authorized = {
+    username: "demo",
+    password: "demo",
+  };
+  const [inputsError, setInputsError] = useState({});
+  const [user, setUser] = useState(initState);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const errors = { ...inputsError };
+    Object.keys(errors).forEach((propName) => {
+      if (!isEmpty(user[propName])) {
+        delete errors[propName];
+      }
+    });
+    setInputsError(errors);
+  }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (isLoading) {
@@ -16,6 +37,25 @@ const LoginPage = () => {
       return () => clearTimeout(timeOutId);
     }
   }, [isLoading]);
+
+  const onSubmit = () => {
+    const errors = {};
+    Object.keys(user).forEach((propName) => {
+      if (isEmpty(user[propName])) {
+        errors[propName] = { content: "Please add a value" };
+      }
+    });
+    if (isEmpty(errors) && isEqual(user, authorized)) {
+      submitUser(user);
+    } else {
+      setInputsError(errors);
+    }
+  };
+
+  const handleOnChange = (e, data) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+  };
 
   const refreshPage = () => {
     setIsLoading(true);
@@ -25,7 +65,8 @@ const LoginPage = () => {
     window.location.reload();
   };
 
-  const onSubmit = () => {
+  const submitUser = () => {
+    setUser(initState);
     history.push("/resume");
   };
 
@@ -48,11 +89,21 @@ const LoginPage = () => {
 
         <form>
           <div className={styles.userBox}>
-            <input type="text" name="" required="" />
+            <input
+              type="text"
+              name="username"
+              required={true}
+              onChange={handleOnChange}
+            />
             <label>Username</label>
           </div>
           <div className={styles.userBox}>
-            <input type="password" name="" required="" />
+            <input
+              type="password"
+              name="password"
+              required={true}
+              onChange={handleOnChange}
+            />
             <label>Password</label>
           </div>
           <button onClick={onSubmit}>

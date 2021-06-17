@@ -49,14 +49,7 @@ const styles = (theme) => ({
 
 function NavBar(props) {
   const history = useHistory();
-  const {
-    classes,
-    openLoginDialog,
-    handleMobileDrawerOpen,
-    handleMobileDrawerClose,
-    mobileDrawerOpen,
-    selectedTab,
-  } = props;
+  const { classes, handleMobileDrawerOpen } = props;
 
   const context = useContext(Context);
 
