@@ -29,8 +29,11 @@ The build is minified and the filenames include the hashes.\
 ### `npm run build`
 
 **Note: ostalo da se uradi**
+be
+email send
 
-Login
+drawer mini za navigaciju
 Projects section
 povezati sa drustvenim mrezama
+
 depoly
