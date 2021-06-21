@@ -12,6 +12,7 @@ admin.initializeApp({
 });
 const db = admin.firestore();
 const comments = require("./comments");
+const emailService = require("./emailService");
 
 app.use(express.json());
 app.use(cors());
@@ -26,6 +27,7 @@ app.get("/api", (req, res) => {
 });
 
 app.use("/api/comments", comments);
+app.use("/api/email", emailService);
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

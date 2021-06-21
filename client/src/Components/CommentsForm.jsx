@@ -11,6 +11,7 @@ import { FormattedMessage } from "react-intl";
 import CommentsFormHeader from "./AdditionalComponents/CommentsFormHeader";
 import { postComment, updateComment } from "../commentsServices";
 import { isEmpty } from "lodash";
+import proxyPaths from "../proxyPaths.json";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -85,11 +86,37 @@ export default function CommentsForm({
     } else {
       console.log("err post");
     }
+    postingRegister();
   };
 
   const handleOnChange = (e, data) => {
     const { name, value } = e.target;
     setComment({ ...comment, [name]: value });
+  };
+
+  const postingRegister = () => {
+    const user = JSON.stringify({ ...comment });
+    fetch(`${proxyPaths.basePath}/api/email/sent`, {
+      method: "post",
+      body: user,
+      header: {
+        "Content-type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+      .then((response) => {
+        console.log("sve je ok");
+      })
+      .catch((error) => {
+        console.log("iz castch-a " + error);
+      });
   };
 
   return (
