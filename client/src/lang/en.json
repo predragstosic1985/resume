@@ -55,5 +55,11 @@
     "ProjectsDescription.Army": "Army",
     "ProjectsDescription.decsArmy": "For nine years I work for the Armed forces of Serbia as a commissioned officer - final rank captain.",
     "ProjectsDescription.decsCont": "Since 2018 I am working from Contrimo consulting and innovations as an IT consultant.",
-    "ProjectsDescription.decsFree": "From time to time I worked freelance, various technologies, and libraries. You can check out some of the projects in the cards.There are many projects in Node JS, React, bootstrap. You are welcome to explore."
+    "ProjectsDescription.decsFree": "From time to time I worked freelance, various technologies, and libraries. You can check out some of the projects in the cards.There are many projects in Node JS, React, bootstrap. You are welcome to explore.",
+    "ProjectsDescription.appDesc": "Application for specialized dentist ordinations. Already in use by a couple of ordinations. Dentists can schedule an appointment, open virtual cardboard for patients, generate PDF report, import old cardboards, import x rays, and many more. For demo please contact me.",
+    "ProjectsDescription.soldatDesc": "Website connected to the application for dentist ordination. Localized and fully responsive. Build up with Semantic UI React library.",
+    "ProjectsDescription.BgymDesc": "Bootstrap regular static website is fully responsive. For Gym and Kick Boxing Club.",
+    "ProjectsDescription.descManda": "Html5, css3 and JS website, fully responsive. For wholesale school supplies.",
+    "ProjectsDescription.descUgr": "Website, fully responsive. Intended primarily for the local community advertising local businesses and settlement development.",
+    "ProjectsDescription.descSara": "Website, fully responsive. Very interesting website for a small family pharmacy."
 }

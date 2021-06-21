@@ -54,5 +54,11 @@
     "ProjectsDescription.Army": "Armee",
     "ProjectsDescription.decsArmy": "Neun Jahre lang arbeite ich für die Streitkräfte Serbiens als Unteroffizier - Hauptmann im letzten Rang.",
     "ProjectsDescription.decsCont": "Seit 2018 arbeite ich bei Contrimo Consulting und Innovationen als IT-Berater.",
-    "ProjectsDescription.decsFree": "Von Zeit zu Zeit arbeitete ich freiberuflich, verschiedene Technologien und Bibliotheken. Sie können einige der Projekte in den Karten sehen. Es gibt viele Projekte in Node JS, React, Bootstrap. Sie können gerne erkunden."
+    "ProjectsDescription.decsFree": "Von Zeit zu Zeit arbeitete ich freiberuflich, verschiedene Technologien und Bibliotheken. Sie können einige der Projekte in den Karten sehen. Es gibt viele Projekte in Node JS, React, Bootstrap. Sie können gerne erkunden.",
+    "ProjectsDescription.appDesc": "Antrag auf fachzahnärztliche Ordinationen. Bereits bei einigen Ordinationen im Einsatz. Zahnärzte können einen Termin vereinbaren, virtuelle Kartons für Patienten öffnen, alte Kartons importieren, PDF-Bericht erstellen, Röntgenbilder importieren und vieles mehr. Für eine Demo kontaktieren Sie mich bitte.",
+    "ProjectsDescription.soldatDesc": "Bootstrap regelmäßige statische Website, die mit der Anwendung für die Zahnarztpraxis verbunden ist. Lokalisiert und vollständig ansprechbar. Bauen Sie mit der Semantic UI React-Bibliothek auf.",
+    "ProjectsDescription.BgymDesc": "Die reguläre statische Bootstrap-Website ist vollständig responsive. Für Fitnessstudio und Kickboxclub.",
+    "ProjectsDescription.descManda": "Html5-, CSS3- und JS-Website, vollständig responsive. Für den Großhandel mit Schulbedarf.",
+    "ProjectsDescription.descUgr": "In erster Linie für die lokale Gemeinschaft bestimmt, die lokale Unternehmen und Siedlungsentwicklung fördert.",
+    "ProjectsDescription.descSara": "Webseite, voll responsiv. Sehr interessante Website für eine kleine Familienapotheke."
 }

@@ -55,5 +55,10 @@
     "ProjectsDescription.Army": "Vojska Srbije",
     "ProjectsDescription.decsArmy": "Devet godina sam radio za VS i napustio sam vojsku u cinu kapetana.",
     "ProjectsDescription.decsCont": "Od 2018 godine radim za Contrimo consulting and innovations kao IT consultant.",
-    "ProjectsDescription.decsFree": "S vremena na vreme radio sam freelance razlicite tehnologije, programi i bibiloteke, Node JS, React, bootstap itd. Pogledajte deo tih projekata."
+    "ProjectsDescription.decsFree": "S vremena na vreme radio sam freelance razlicite tehnologije, programi i bibiloteke, Node JS, React, bootstap itd. Pogledajte deo tih projekata.",
+    "ProjectsDescription.appDesc": "Aplikacija napravljena za stomatoloske ordinacije, koristi je nekoliko klijenata. Preko aplikacije mogu da zakazu termin, otvore karton za pacijenta, da importuju stari karton, generisu pdf i jos mnogo toga.",
+    "ProjectsDescription.soldatDesc": "Staticki web sajt, responsive i lokalizovan, napravljen na bazi React JS i Semantic UI. Povezan online sa aplikacijom za rad ordinacije.",
+    "ProjectsDescription.descManda": "Html5, css3 i JS website, responsive. Namenjen za veleprodaju skolskog pribora i materijala.",
+    "ProjectsDescription.descUgr": "Web stranica, responsive. Namenjena za lokalne firme, reklame, razvoj naselja sa najbitnijim obavestenjima.",
+    "ProjectsDescription.descSara": "Website, responsive. Zanimljiv web sajt za malu porodicnu apoteku."
 }

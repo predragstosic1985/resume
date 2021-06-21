@@ -12,6 +12,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import Link from "@material-ui/core/Link";
 import ProjectsLoaders from "./ProjectsLoaders";
 import { FormattedMessage } from "react-intl";
 import { useHistory } from "react-router-dom";
@@ -19,6 +20,12 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import { Context } from "../Wrapper/Wrapper";
+import imgSoldatDent from "../Assets/images/soldat_dent.jpg";
+import imgDMS from "../Assets/images/virtualDoc.jpg";
+import imgBGym from "../Assets/images/fajt.jpg";
+import imgManda from "../Assets/images/manda.jpg";
+import imgUgr from "../Assets/images/ugr.jpg";
+import imgSara from "../Assets/images/sara.jpg";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -140,34 +147,198 @@ export default function Projects() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    {/* <Button size="small" color="primary">
-                      View
-                    </Button> */}
-                    <Button size="small" color="primary">
-                      visit
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
+            {/* One START */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={imgDMS}
+                  title="Soldat dent"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Dental management system
+                  </Typography>
+                  <Typography>
+                    <FormattedMessage
+                      id="ProjectsDescription.appDesc"
+                      defaultMessage="desc"
+                    />
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    <Link href="http://159.89.19.117/" target="_blank">
+                      <FormattedMessage
+                        id="ProjectsDescription.visit"
+                        defaultMessage="visit"
+                      />
+                    </Link>
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            {/* One END */}
+            {/* One START */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={imgSoldatDent}
+                  title="Soldat dent"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Soldat Dent
+                  </Typography>
+                  <Typography>
+                    <FormattedMessage
+                      id="ProjectsDescription.soldatDesc"
+                      defaultMessage="desc"
+                    />
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    <Link href="https://www.soldat-dent.rs/" target="_blank">
+                      <FormattedMessage
+                        id="ProjectsDescription.visit"
+                        defaultMessage="visit"
+                      />
+                    </Link>
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            {/* One END */}
+            {/* One START */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={imgBGym}
+                  title="B-Gym"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    B-Gym
+                  </Typography>
+                  <Typography>
+                    <FormattedMessage
+                      id="ProjectsDescription.BgymDesc"
+                      defaultMessage="desc"
+                    />
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    <Link href="https://b-gym-batajnica.rs/" target="_blank">
+                      <FormattedMessage
+                        id="ProjectsDescription.visit"
+                        defaultMessage="visit"
+                      />
+                    </Link>
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            {/* One END */}
+            {/* One START */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={imgManda}
+                  title="Manda"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Manda
+                  </Typography>
+                  <Typography>
+                    <FormattedMessage
+                      id="ProjectsDescription.descManda"
+                      defaultMessage="desc"
+                    />
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    <Link href="https://www.manda.rs/" target="_blank">
+                      <FormattedMessage
+                        id="ProjectsDescription.visit"
+                        defaultMessage="visit"
+                      />
+                    </Link>
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            {/* One END */}
+            {/* One START */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={imgUgr}
+                  title="Ugrinovci"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Ugrinovci
+                  </Typography>
+                  <Typography>
+                    <FormattedMessage
+                      id="ProjectsDescription.descUgr"
+                      defaultMessage="desc"
+                    />
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    <Link href="http://www.ugrinovci.rs/" target="_blank">
+                      <FormattedMessage
+                        id="ProjectsDescription.visit"
+                        defaultMessage="visit"
+                      />
+                    </Link>
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            {/* One END */}
+            {/* One START */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={imgSara}
+                  title="Sara pharm"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Sara pharm
+                  </Typography>
+                  <Typography>
+                    <FormattedMessage
+                      id="ProjectsDescription.descSara"
+                      defaultMessage="desc"
+                    />
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    <Link href="http://www.sarapharm.rs/" target="_blank">
+                      <FormattedMessage
+                        id="ProjectsDescription.visit"
+                        defaultMessage="visit"
+                      />
+                    </Link>
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            {/* One END */}
           </Grid>
         </Container>
       </main>
