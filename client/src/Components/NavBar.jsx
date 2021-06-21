@@ -118,6 +118,10 @@ export default function PersistentDrawerRight() {
     history.push("/projects");
   };
 
+  const goToEducation = () => {
+    history.push("/education");
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -196,7 +200,7 @@ export default function PersistentDrawerRight() {
               }
             />
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={goToEducation}>
             <ListItemIcon>
               <SchoolIcon />
             </ListItemIcon>

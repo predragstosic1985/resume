@@ -60,5 +60,17 @@
     "ProjectsDescription.BgymDesc": "Die reguläre statische Bootstrap-Website ist vollständig responsive. Für Fitnessstudio und Kickboxclub.",
     "ProjectsDescription.descManda": "Html5-, CSS3- und JS-Website, vollständig responsive. Für den Großhandel mit Schulbedarf.",
     "ProjectsDescription.descUgr": "In erster Linie für die lokale Gemeinschaft bestimmt, die lokale Unternehmen und Siedlungsentwicklung fördert.",
-    "ProjectsDescription.descSara": "Webseite, voll responsiv. Sehr interessante Website für eine kleine Familienapotheke."
+    "ProjectsDescription.descSara": "Webseite, voll responsiv. Sehr interessante Website für eine kleine Familienapotheke.",
+    "Education.Section": "Schule",
+    "Education.desc": "Non scholae, sed vitae discimus.",
+    "Education.descOne": "Die Studie wurde vom Rektorat der Universität Belgrad als multidisziplinär organisiert. Gründer und Leiter dieser Studien ist Professor Dr. Dragan Simeunović. Das Studium wurde unter der Schirmherrschaft der Fakultät für Politikwissenschaft, der Fakultät für Rechtswissenschaften und der Fakultät für Sicherheit organisiert. Dreimal in Folge als bestes Studium in Europa ausgezeichnet.",
+    "Education.descTwo": "Nach der Art des Studiums entspricht sie der Fakultät für Organisationswissenschaften. Es umfasst 45 Prüfungen und Abschlussarbeiten. Die Ausbildung umfasst Feldarbeit unter realen Bedingungen. Die Allgemeinbildung umfasst gleichermaßen natur- und sozialwissenschaftliche Fächer. Enges Fachwissen ist mit organisatorischen Angelegenheiten verbunden.",
+    "Education.descThree": "Während meiner beruflichen Laufbahn hatte ich viele berufsbezogene und berufsfremde Kurse besucht. Die Anzahl und Dauer der Kurse sind ziemlich groß. Einige von ihnen waren in Serbien, andere im Ausland.",
+    "Education.since": "seit",
+    "Education.may": "mai",
+    "Education.address": "Belgrade, Serbia, Europe, ",
+    "Education.army": "Armee",
+    "Education.va": "Militärakademie",
+    "Education.ms": "Master-Abschluss Sicherheit organisierte Kriminalität und Terrorismus",
+    "Education.uni": "Universität Belgrad"
 }

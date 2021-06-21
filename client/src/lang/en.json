@@ -61,5 +61,17 @@
     "ProjectsDescription.BgymDesc": "Bootstrap regular static website is fully responsive. For Gym and Kick Boxing Club.",
     "ProjectsDescription.descManda": "Html5, css3 and JS website, fully responsive. For wholesale school supplies.",
     "ProjectsDescription.descUgr": "Website, fully responsive. Intended primarily for the local community advertising local businesses and settlement development.",
-    "ProjectsDescription.descSara": "Website, fully responsive. Very interesting website for a small family pharmacy."
+    "ProjectsDescription.descSara": "Website, fully responsive. Very interesting website for a small family pharmacy.",
+    "Education.Section": "Education",
+    "Education.desc": "Non scholae, sed vitae discimus.",
+    "Education.descOne": "The study was organized by the University of Belgrade's rectorate as multidisciplinary. The founder and head of these studies is professor Dr Dragan Simeunović. The studies were organized under the auspices of Faculty of Political Science, Faculty of Law and Faculty of Security. Three times in a row declared for the best studies in Europe.",
+    "Education.descTwo": "According to the nature of the studies, it is the same as the Faculty of Organizational Sciences. It includes 45 exams and graduation work. Training includes field work in real conditions. General education encompasses equally subjects of natural sciences and social sciences. Closely specialist knowledge is related to organizational affairs.",
+    "Education.descThree": "During my career, I had attended many courses related and non-related to my job. The amount and duration of courses are quite large. Some of them were in Serbia some abroad.",
+    "Education.since": "since",
+    "Education.may": "may",
+    "Education.address": "Belgrade, Serbia, Europe, ",
+    "Education.army": "Army",
+    "Education.va": "Military academy",
+    "Education.ms": "Master degree security organized crime and terrorism",
+    "Education.uni": "University of Belgrade"
 }

@@ -60,5 +60,17 @@
     "ProjectsDescription.soldatDesc": "Staticki web sajt, responsive i lokalizovan, napravljen na bazi React JS i Semantic UI. Povezan online sa aplikacijom za rad ordinacije.",
     "ProjectsDescription.descManda": "Html5, css3 i JS website, responsive. Namenjen za veleprodaju skolskog pribora i materijala.",
     "ProjectsDescription.descUgr": "Web stranica, responsive. Namenjena za lokalne firme, reklame, razvoj naselja sa najbitnijim obavestenjima.",
-    "ProjectsDescription.descSara": "Website, responsive. Zanimljiv web sajt za malu porodicnu apoteku."
+    "ProjectsDescription.descSara": "Website, responsive. Zanimljiv web sajt za malu porodicnu apoteku.",
+    "Education.Section": "Obrazovanje",
+    "Education.desc": "Non scholae, sed vitae discimus.",
+    "Education.descOne": "Veoma zanimljive multidisciplinarne studije organizovane direktno pod okriljem rektorata u Beogrdu. Zdruzeno izdaju diplomu tri fakulteta i rektorat Univerzita u Beogradu kao najvise prosvetno telo u drzavi. Tri godine su osvajale prvo mesto u Evropi kao najbolje master studije.",
+    "Education.descTwo": "Vojna akademija prema svojoj prirodi obuhvata raznovrsne predmete od matematike, elektronike, elektrotehinke, informatike pa sve do sociologije. Obuhvat a45 ispita i veoma je slicna FON-u.",
+    "Education.descThree": "Tokoma karijere pohadjao sam mnoge kurseve vezane i ne tako vezane za direktan posao. Neki su bili u zemlji neki u inostranstvu. Spisak je zaista dugacak.",
+    "Education.since": "od",
+    "Education.may": "maj",
+    "Education.address": "Beograd, Srbija, Evropa, ",
+    "Education.army": "Vojska Srbije",
+    "Education.va": "Vojna akademija",
+    "Education.ms": "Master studije bezbednost, organizovani kriminal i terorizam",
+    "Education.uni": "Univerzitet u Beogradu"
 }
