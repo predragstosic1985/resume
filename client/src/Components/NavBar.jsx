@@ -20,8 +20,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import SchoolIcon from "@material-ui/icons/School";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import LanguageIcon from "@material-ui/icons/Language";
+import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import { Context } from "../Wrapper/Wrapper";
 import { useHistory } from "react-router-dom";
@@ -156,9 +156,9 @@ export default function PersistentDrawerRight() {
       </AppBar>
 
       <Drawer
-        variant="persistent"
         anchor="right"
         open={open}
+        variant="permanent"
         className={clsx(classes.drawer, {
           [classes.drawerOpen]: open,
           [classes.drawerClose]: !open,
