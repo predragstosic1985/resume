@@ -11,7 +11,6 @@ admin.initializeApp({
     "https://resumedb-cbfc1-default-rtdb.europe-west1.firebasedatabase.app",
 });
 const db = admin.firestore();
-const hello = require("./hello");
 const comments = require("./comments");
 
 app.use(express.json());
@@ -26,7 +25,6 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from Stole!" });
 });
 
-app.use("/api/hello", hello);
 app.use("/api/comments", comments);
 
 app.listen(PORT, () => {

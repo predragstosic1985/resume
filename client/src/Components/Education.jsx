@@ -71,8 +71,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 export default function Education() {
   const history = useHistory();
   const context = useContext(Context);
@@ -183,6 +181,7 @@ export default function Education() {
                   }
                 />
               </ListItem>
+              <Divider />
               {/* END */}
               {/* Start */}
               <ListItem alignItems="flex-start">
@@ -216,6 +215,7 @@ export default function Education() {
                   }
                 />
               </ListItem>
+              <Divider />
               {/* END */}
               {/* Start */}
               <ListItem alignItems="flex-start">
@@ -256,6 +256,7 @@ export default function Education() {
                   }
                 />
               </ListItem>
+              <Divider />
               {/* END */}
             </List>
           </Grid>

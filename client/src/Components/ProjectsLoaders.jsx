@@ -127,23 +127,13 @@ export default function CircularIndeterminate() {
               />
             </Typography>
 
-            <Typography
-              gutterBottom
-              variant="h5"
-              variant="subtitle2"
-              align="center"
-            >
+            <Typography gutterBottom variant="subtitle2" align="center">
               <FormattedMessage
                 id="ProjectsDescription.NumOfPro"
                 defaultMessage="number of projects"
               />
             </Typography>
-            <Typography
-              gutterBottom
-              variant="h5"
-              variant="body1"
-              align="center"
-            >
+            <Typography gutterBottom variant="body1" align="center">
               <FormattedMessage
                 id="ProjectsDescription.nov"
                 defaultMessage="nov 2018 - present"
@@ -191,23 +181,13 @@ export default function CircularIndeterminate() {
               />
             </Typography>
 
-            <Typography
-              gutterBottom
-              variant="h5"
-              variant="subtitle2"
-              align="center"
-            >
+            <Typography gutterBottom variant="subtitle2" align="center">
               <FormattedMessage
                 id="ProjectsDescription.NumOfPro"
                 defaultMessage="number of projects"
               />
             </Typography>
-            <Typography
-              gutterBottom
-              variant="h5"
-              variant="body1"
-              align="center"
-            >
+            <Typography gutterBottom variant="body1" align="center">
               <FormattedMessage
                 id="ProjectsDescription.sep"
                 defaultMessage="2009 - 2018"
@@ -253,12 +233,7 @@ export default function CircularIndeterminate() {
               />
             </Typography>
 
-            <Typography
-              gutterBottom
-              variant="h5"
-              variant="subtitle2"
-              align="center"
-            >
+            <Typography gutterBottom variant="subtitle2" align="center">
               <FormattedMessage
                 id="ProjectsDescription.NumOfPro"
                 defaultMessage="number of projects"
