@@ -33,11 +33,15 @@
     "CommentsForm.nameValidation": "Please add a value.",
     "CommentsForm.emailValidation": "If you enter a valid email address you will get a thank you note.",
     "CommentsForm.commentValidation": "Please add some comments, that's why you are here?",
+    "CommentsSection.crud": "Test basic CRUD and leave a comment",
     "CommentsSection.Send": "Comments",
     "CommentsSection.Posted": "Posted",
     "CommentsSection.Comments": "Comments",
     "CommentsButton.Add": "Add comment",
     "NavBar.Lang": "Language",
     "NavBar.School": "Education",
-    "NavBar.Work": "Work experience"
+    "NavBar.Work": "Work experience",
+    "ProjectsDescription.Section": "Projects section",
+    "ProjectsDescription.Projects": "Projects",
+    "ProjectsDescription.Desc": "For more information about projects and work experience please visit section 'Work experience' in the navigation bar on the right side."
 }

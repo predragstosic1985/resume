@@ -33,11 +33,15 @@
     "CommentsForm.nameValidation": "Molim Vas dodajte ime.",
     "CommentsForm.emailValidation": "Ako unesete validnu email adresu dobicete mail/zahvalnicu.",
     "CommentsForm.commentValidation": "Molim vas unesite neki komentar, zato ste ovde?",
+    "CommentsSection.crud": "Testirajte osnovne crud operacije i ostavite komentar",
     "CommentsSection.Send": "Komantari",
     "CommentsSection.Comments": "Komantari",
     "CommentsSection.Posted": "Objavljeno",
     "CommentsButton.Add": "Dodaj komentar",
     "NavBar.Lang": "Jezik",
     "NavBar.School": "Obrazovanje",
-    "NavBar.Work": "Radno iskustvo"
+    "NavBar.Work": "Radno iskustvo",
+    "ProjectsDescription.Section": "Projekti",
+    "ProjectsDescription.Projects": "Radno iskustvo",
+    "ProjectsDescription.Desc": "Za vise informacija o radnom iskustvu i projektima posetite sekciju 'Radno iskustvo', samo kliknite na ikonicu u navigacionom baru sa desne strane."
 }

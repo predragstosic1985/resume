@@ -6,6 +6,9 @@ import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import EditIcon from "@material-ui/icons/Edit";
 import CommentsButton from "./CommentButton";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 import styles from "./style/CommentsSection.module.scss";
 import useFetch from "../hooks/Fetcher";
 import { getComments, getCommentById } from "../commentsServices";
@@ -24,6 +27,9 @@ export default function CommentsSection() {
     backdrop: {
       zIndex: theme.zIndex.drawer + 1,
       color: "#fff",
+    },
+    appBar: {
+      backgroundColor: "#73c2fb",
     },
   }));
 
@@ -57,6 +63,13 @@ export default function CommentsSection() {
 
   return (
     <div className={styles.containerComment}>
+      <AppBar position="relative" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            <FormattedMessage id="CommentsSection.crud" defaultMessage="CRUD" />
+          </Typography>
+        </Toolbar>
+      </AppBar>
       <div className={styles.headerComments}>
         <h1>
           <FormattedMessage

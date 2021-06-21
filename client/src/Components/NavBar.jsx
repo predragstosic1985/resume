@@ -96,9 +96,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PersistentDrawerRight() {
-  const logutUser = () => {
-    history.push("/");
-  };
   const history = useHistory();
   const context = useContext(Context);
   const classes = useStyles();
@@ -111,6 +108,14 @@ export default function PersistentDrawerRight() {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const logutUser = () => {
+    history.push("/");
+  };
+
+  const goToProjects = () => {
+    history.push("/projects");
   };
 
   return (
@@ -181,7 +186,7 @@ export default function PersistentDrawerRight() {
         </div>
         <Divider />
         <List>
-          <ListItem button>
+          <ListItem button onClick={goToProjects}>
             <ListItemIcon>
               <AccountTreeIcon />
             </ListItemIcon>

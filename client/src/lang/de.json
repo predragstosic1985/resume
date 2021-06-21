@@ -33,10 +33,14 @@
     "CommentsForm.emailValidation": "Wenn Sie eine gültige E-Mail-Adresse eingeben, erhalten Sie ein Dankeschön.",
     "CommentsForm.commentValidation": "Bitte fügen Sie einige Kommentare hinzu, deshalb sind Sie hier?",
     "CommentsSection.Send": "Bemerkungen",
+    "CommentsSection.crud": "Teste grundlegendes CRUD und hinterlasse einen Kommentar",
     "CommentsSection.Posted": "Gesendet",
     "CommentsSection.Comments": "Bemerkungen",
     "CommentsButton.Add": "Einen Kommentar hinzufügen",
     "NavBar.Lang": "Sprache",
     "NavBar.School": "Schule",
-    "NavBar.Work": "Berufserfahrung"
+    "NavBar.Work": "Berufserfahrung",
+    "ProjectsDescription.Section": "Abschnitt Projekte",
+    "ProjectsDescription.Projects": "Projekte",
+    "ProjectsDescription.Desc": "Weitere Informationen zu Projekten und Praktika finden Sie im Abschnitt 'Berufserfahrung' in der Navigationsleiste auf der rechten Seite."
 }
