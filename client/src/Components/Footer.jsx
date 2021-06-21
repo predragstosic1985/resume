@@ -116,7 +116,7 @@ const socialIcons = [
       </svg>
     ),
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/feed/?trk=onboarding-landing",
   },
   {
     icon: (
@@ -132,23 +132,7 @@ const socialIcons = [
       </svg>
     ),
     label: "Instagram",
-    href: "https://www.instagram.com/",
-  },
-  {
-    icon: (
-      <svg
-        role="img"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <title>Europass</title>
-        <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z" />
-      </svg>
-    ),
-    label: "Europass",
-    href: "https://www.twitter.com/",
+    href: "https://www.instagram.com/predrag_1985/",
   },
 ];
 
