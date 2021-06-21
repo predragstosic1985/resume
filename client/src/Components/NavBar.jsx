@@ -1,72 +1,134 @@
-import React, { memo, useContext } from "react";
-import PropTypes from "prop-types";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Hidden,
-  IconButton,
-  withStyles,
-} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import Select from "@material-ui/core/Select";
+import React, { useState, useContext } from "react";
+import clsx from "clsx";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Drawer from "@material-ui/core/Drawer";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import List from "@material-ui/core/List";
+import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import SchoolIcon from "@material-ui/icons/School";
+import AccountTreeIcon from "@material-ui/icons/AccountTree";
+import LanguageIcon from "@material-ui/icons/Language";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import { Context } from "../Wrapper/Wrapper";
 import { useHistory } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
-const styles = (theme) => ({
+const drawerWidth = 240;
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+  },
   appBar: {
-    boxShadow: theme.shadows[6],
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: "#1976d2",
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(["margin", "width"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(["margin", "width"], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginRight: drawerWidth,
+  },
+  title: {
+    flexGrow: 1,
+  },
+  hide: {
+    display: "none",
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+    whiteSpace: "nowrap",
+  },
+  drawerOpen: {
+    width: drawerWidth,
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  drawerClose: {
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    overflowX: "hidden",
+    width: theme.spacing(7) + 1,
+    [theme.breakpoints.up("sm")]: {
+      width: theme.spacing(9) + 1,
+    },
+  },
+  menuButton: {
+    marginRight: 0,
   },
   toolbar: {
     display: "flex",
-    justifyContent: "space-between",
-  },
-  menuButtonText: {
-    fontSize: theme.typography.body1.fontSize,
-    fontWeight: theme.typography.h6.fontWeight,
+    alignItems: "center",
+    justifyContent: "flex-end",
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
   },
   brandText: {
     fontFamily: "'Baloo Bhaijaan', cursive",
     fontWeight: 400,
   },
-  noDecoration: {
-    textDecoration: "none !important",
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: "7rem",
-    width: "7rem",
-  },
-  btnLogut: {
-    margin: theme.spacing(1),
-  },
-});
+}));
 
-function NavBar(props) {
-  const history = useHistory();
-  const { classes, handleMobileDrawerOpen } = props;
-
-  const context = useContext(Context);
-
+export default function PersistentDrawerRight() {
   const logutUser = () => {
     history.push("/");
+  };
+  const history = useHistory();
+  const context = useContext(Context);
+  const classes = useStyles();
+  const theme = useTheme();
+  const [open, setOpen] = useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
   };
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          <div>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open,
+        })}
+      >
+        <Toolbar>
+          <Typography variant="h6" noWrap className={classes.title}>
             <Typography
               variant="h4"
               className={classes.brandText}
               display="inline"
-              color="primary"
+              color="initial"
             >
               C
             </Typography>
@@ -78,60 +140,97 @@ function NavBar(props) {
             >
               V
             </Typography>
-          </div>
-          <div>
-            <Hidden mdUp>
-              <IconButton
-                className={classes.menuButton}
-                onClick={handleMobileDrawerOpen}
-                aria-label="Open Navigation"
-              >
-                <MenuIcon color="primary" />
-              </IconButton>
-            </Hidden>
-            <Hidden smDown>
-              <FormControl variant="outlined" className={classes.formControl}>
-                <InputLabel htmlFor="outlined-age-native-simple">
-                  Language
-                </InputLabel>
-                <Select
-                  value={context.locale === "en-US" ? "en" : context.locale}
-                  onChange={context.selectLanguage}
-                  label="Language"
-                >
-                  <MenuItem value="en">English</MenuItem>
-                  <MenuItem value="de">German</MenuItem>
-                  <MenuItem value="sr">Serbian</MenuItem>
-                </Select>
-              </FormControl>
-              <IconButton
-                aria-label="Logout"
-                className={classes.btnLogut}
-                onClick={logutUser}
-              >
-                <PowerSettingsNewIcon />
-              </IconButton>
-            </Hidden>
-          </div>
+          </Typography>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleDrawerOpen}
+            className={clsx(classes.menuButton, {
+              [classes.hide]: open,
+            })}
+          >
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
-      {/* <NavigationDrawer
+
+      <Drawer
+        variant="persistent"
         anchor="right"
-        open={mobileDrawerOpen}
-        selectedItem={selectedTab}
-        onClose={handleMobileDrawerClose}
-      /> */}
+        open={open}
+        className={clsx(classes.drawer, {
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open,
+        })}
+        classes={{
+          paper: clsx({
+            [classes.drawerOpen]: open,
+            [classes.drawerClose]: !open,
+          }),
+        }}
+      >
+        <div className={classes.drawerHeader}>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === "rtl" ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <AccountTreeIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <FormattedMessage id="NavBar.Work" defaultMessage="Projects" />
+              }
+            />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <SchoolIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <FormattedMessage id="NavBar.School" defaultMessage="School" />
+              }
+            />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <LanguageIcon />
+            </ListItemIcon>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel htmlFor="outlined-age-native-simple">
+                <FormattedMessage id="NavBar.Lang" defaultMessage="Language" />
+              </InputLabel>
+              <Select
+                value={context.locale === "en-US" ? "en" : context.locale}
+                onChange={context.selectLanguage}
+                label="Language"
+              >
+                <MenuItem value="en">English</MenuItem>
+                <MenuItem value="de">German</MenuItem>
+                <MenuItem value="sr">Serbian</MenuItem>
+              </Select>
+            </FormControl>
+          </ListItem>
+        </List>
+        <Divider />
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <PowerSettingsNewIcon onClick={logutUser} />
+            </ListItemIcon>
+            <ListItemText primary="Logout" />
+          </ListItem>
+        </List>
+      </Drawer>
     </div>
   );
 }
-
-NavBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-  handleMobileDrawerOpen: PropTypes.func,
-  handleMobileDrawerClose: PropTypes.func,
-  mobileDrawerOpen: PropTypes.bool,
-  selectedTab: PropTypes.string,
-  openLoginDialog: PropTypes.func.isRequired,
-};
-
-export default withStyles(styles, { withTheme: true })(memo(NavBar));

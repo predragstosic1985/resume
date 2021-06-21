@@ -36,5 +36,8 @@
     "CommentsSection.Send": "Komantari",
     "CommentsSection.Comments": "Komantari",
     "CommentsSection.Posted": "Objavljeno",
-    "CommentsButton.Add": "Dodaj komentar"
+    "CommentsButton.Add": "Dodaj komentar",
+    "NavBar.Lang": "Jezik",
+    "NavBar.School": "Obrazovanje",
+    "NavBar.Work": "Radno iskustvo"
 }

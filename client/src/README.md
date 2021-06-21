@@ -32,8 +32,8 @@ The build is minified and the filenames include the hashes.\
 be
 email send
 
-drawer mini za navigaciju
 Projects section
+education
 povezati sa drustvenim mrezama
 
 depoly

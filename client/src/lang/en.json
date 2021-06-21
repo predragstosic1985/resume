@@ -36,5 +36,8 @@
     "CommentsSection.Send": "Comments",
     "CommentsSection.Posted": "Posted",
     "CommentsSection.Comments": "Comments",
-    "CommentsButton.Add": "Add comment"
+    "CommentsButton.Add": "Add comment",
+    "NavBar.Lang": "Language",
+    "NavBar.School": "Education",
+    "NavBar.Work": "Work experience"
 }
