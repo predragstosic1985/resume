@@ -1,7 +1,7 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import CameraIcon from "@material-ui/icons/PhotoCamera";
+import HomeIcon from "@material-ui/icons/Home";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -13,18 +13,18 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      Footer text
-    </Typography>
-  );
-}
+import Paper from "@material-ui/core/Paper";
+import ProjectsLoaders from "./ProjectsLoaders";
+import { FormattedMessage } from "react-intl";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
+  appBar: {
+    backgroundColor: "#1976d2",
+  },
   icon: {
     marginRight: theme.spacing(2),
+    cursor: "pointer",
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -52,28 +52,40 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  paper: {
+    height: 140,
+    width: 100,
+  },
 }));
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function Projects() {
+  const history = useHistory();
   const classes = useStyles();
+
+  const goToHome = () => {
+    history.push("/resume");
+  };
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="relative" className={classes.appBar}>
         <Toolbar>
-          <CameraIcon className={classes.icon} />
+          <HomeIcon className={classes.icon} onClick={goToHome} />
           <Typography variant="h6" color="inherit" noWrap>
-            Projects section
+            <FormattedMessage
+              id="ProjectsDescription.Section"
+              defaultMessage="Projects"
+            />
           </Typography>
         </Toolbar>
       </AppBar>
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
-          <Container maxWidth="sm">
+          <Container maxWidth="md">
             <Typography
               component="h1"
               variant="h2"
@@ -92,20 +104,7 @@ export default function Projects() {
               Describe ispod tri loadera mala sa projektima contrimo armija
               freelance linkovi za contimo linkovi za freelance u karticama
             </Typography>
-            {/* <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
-                  </Button>
-                </Grid>
-              </Grid>
-            </div> */}
+            <ProjectsLoaders />
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
@@ -144,18 +143,17 @@ export default function Projects() {
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
         <Typography
           variant="subtitle1"
           align="center"
           color="textSecondary"
           component="p"
         >
-          Mali zakljucak
+          <FormattedMessage
+            id="ProjectsDescription.thn"
+            defaultMessage="Thank you"
+          />
         </Typography>
-        <Copyright />
       </footer>
       {/* End footer */}
     </React.Fragment>
