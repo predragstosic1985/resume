@@ -9,6 +9,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
+import { FormattedMessage } from "react-intl";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -132,7 +133,10 @@ export default function CircularIndeterminate() {
               variant="subtitle2"
               align="center"
             >
-              number of projects
+              <FormattedMessage
+                id="ProjectsDescription.NumOfPro"
+                defaultMessage="number of projects"
+              />
             </Typography>
             <Typography
               gutterBottom
@@ -140,20 +144,31 @@ export default function CircularIndeterminate() {
               variant="body1"
               align="center"
             >
-              nov 2018 - present
+              <FormattedMessage
+                id="ProjectsDescription.nov"
+                defaultMessage="nov 2018 - present"
+              />
             </Typography>
             <Typography variant="caption" align="center" gutterBottom>
-              IT Consultant
+              <FormattedMessage
+                id="ProjectsDescription.Consultant"
+                defaultMessage="Consultant"
+              />
             </Typography>
             <Typography align="justify">
-              Since 2018 I am working from Contrimo consulting and innovations
-              as an IT consultant.
+              <FormattedMessage
+                id="ProjectsDescription.decsCont"
+                defaultMessage="decsCont"
+              />
             </Typography>
           </CardContent>
           <CardActions>
             <Button size="small" color="primary">
               <Link href="https://www.contrimo.com/en/" target="_blank">
-                visit
+                <FormattedMessage
+                  id="ProjectsDescription.visit"
+                  defaultMessage="visit"
+                />
               </Link>
             </Button>
           </CardActions>
@@ -163,7 +178,10 @@ export default function CircularIndeterminate() {
         <Card className={classes.card}>
           <CardContent className={classes.cardContent}>
             <Typography gutterBottom variant="h5" component="h2" align="center">
-              Army
+              <FormattedMessage
+                id="ProjectsDescription.Army"
+                defaultMessage="Army"
+              />
             </Typography>
             <Typography gutterBottom align="center">
               <CircularProgressWithLabel
@@ -179,7 +197,10 @@ export default function CircularIndeterminate() {
               variant="subtitle2"
               align="center"
             >
-              number of projects
+              <FormattedMessage
+                id="ProjectsDescription.NumOfPro"
+                defaultMessage="number of projects"
+              />
             </Typography>
             <Typography
               gutterBottom
@@ -187,20 +208,31 @@ export default function CircularIndeterminate() {
               variant="body1"
               align="center"
             >
-              sep 2009 - nov 2018
+              <FormattedMessage
+                id="ProjectsDescription.sep"
+                defaultMessage="2009 - 2018"
+              />
             </Typography>
             <Typography variant="caption" align="center" gutterBottom>
-              Captain
+              <FormattedMessage
+                id="ProjectsDescription.Captain"
+                defaultMessage="Captain"
+              />
             </Typography>
             <Typography align="justify">
-              For nine years I work for the Armed forces of Serbia as a
-              commissioned officer - final rank captain.
+              <FormattedMessage
+                id="ProjectsDescription.decsArmy"
+                defaultMessage="decsArmy"
+              />
             </Typography>
           </CardContent>
           <CardActions>
             <Button size="small" color="primary">
               <Link href="http://www.vs.rs/" target="_blank">
-                visit
+                <FormattedMessage
+                  id="ProjectsDescription.visit"
+                  defaultMessage="visit"
+                />
               </Link>
             </Button>
           </CardActions>
@@ -227,13 +259,16 @@ export default function CircularIndeterminate() {
               variant="subtitle2"
               align="center"
             >
-              number of projects
+              <FormattedMessage
+                id="ProjectsDescription.NumOfPro"
+                defaultMessage="number of projects"
+              />
             </Typography>
             <Typography align="justify">
-              From time to time I worked freelance, various technologies, and
-              libraries. You can check out some of the projects in the cards.
-              There are many projects in Node JS, React, bootstrap. You are
-              welcome to explore.
+              <FormattedMessage
+                id="ProjectsDescription.decsFree"
+                defaultMessage="decsFree"
+              />
             </Typography>
           </CardContent>
         </Card>

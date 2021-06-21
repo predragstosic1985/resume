@@ -44,5 +44,16 @@
     "ProjectsDescription.Section": "Projekti",
     "ProjectsDescription.Projects": "Radno iskustvo",
     "ProjectsDescription.Desc": "Za vise informacija o radnom iskustvu i projektima posetite sekciju 'Radno iskustvo', samo kliknite na ikonicu u navigacionom baru sa desne strane.",
-    "ProjectsDescription.thn": "Hvala."
+    "ProjectsDescription.thn": "Hvala.",
+    "ProjectsDescription.DescProjects": "Trenutno radim za 'contrimo consulting and innovations' kancelarije su u Beogradu i Majnhamu.",
+    "ProjectsDescription.NumOfPro": "broj projekata",
+    "ProjectsDescription.Consultant": "IT Consultant",
+    "ProjectsDescription.nov": "Novembar 2018 - trenutno",
+    "ProjectsDescription.sep": "Septembar 2009 - Novembar 2018",
+    "ProjectsDescription.visit": "poseti",
+    "ProjectsDescription.Captain": "Kapetan",
+    "ProjectsDescription.Army": "Vojska Srbije",
+    "ProjectsDescription.decsArmy": "Devet godina sam radio za VS i napustio sam vojsku u cinu kapetana.",
+    "ProjectsDescription.decsCont": "Od 2018 godine radim za Contrimo consulting and innovations kao IT consultant.",
+    "ProjectsDescription.decsFree": "S vremena na vreme radio sam freelance razlicite tehnologije, programi i bibiloteke, Node JS, React, bootstap itd. Pogledajte deo tih projekata."
 }

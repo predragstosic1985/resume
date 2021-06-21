@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import HomeIcon from "@material-ui/icons/Home";
@@ -12,15 +12,25 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
-import Paper from "@material-ui/core/Paper";
 import ProjectsLoaders from "./ProjectsLoaders";
 import { FormattedMessage } from "react-intl";
 import { useHistory } from "react-router-dom";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import { Context } from "../Wrapper/Wrapper";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "#1976d2",
+  },
+  formStyle: {
+    marginLeft: "2rem",
+    marginTop: "1rem",
+    marginBottom: "0.5rem",
+    backgroundColor: "#fff",
+    width: "5rem",
+    borderRadius: "2px",
   },
   icon: {
     marginRight: theme.spacing(2),
@@ -62,6 +72,7 @@ const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function Projects() {
   const history = useHistory();
+  const context = useContext(Context);
   const classes = useStyles();
 
   const goToHome = () => {
@@ -69,7 +80,7 @@ export default function Projects() {
   };
 
   return (
-    <React.Fragment>
+    <>
       <CssBaseline />
       <AppBar position="relative" className={classes.appBar}>
         <Toolbar>
@@ -80,6 +91,20 @@ export default function Projects() {
               defaultMessage="Projects"
             />
           </Typography>
+          <div className={classes.formStyle}>
+            <FormControl className={classes.formControl}>
+              <Select
+                autoWidth
+                value={context.locale === "en-US" ? "en" : context.locale}
+                onChange={context.selectLanguage}
+                label="Language"
+              >
+                <MenuItem value="en">English</MenuItem>
+                <MenuItem value="de">German</MenuItem>
+                <MenuItem value="sr">Serbian</MenuItem>
+              </Select>
+            </FormControl>
+          </div>
         </Toolbar>
       </AppBar>
       <main>
@@ -93,7 +118,10 @@ export default function Projects() {
               color="textPrimary"
               gutterBottom
             >
-              Projects
+              <FormattedMessage
+                id="ProjectsDescription.Projects"
+                defaultMessage="Projects"
+              />
             </Typography>
             <Typography
               variant="h5"
@@ -101,8 +129,10 @@ export default function Projects() {
               color="textSecondary"
               paragraph
             >
-              Describe ispod tri loadera mala sa projektima contrimo armija
-              freelance linkovi za contimo linkovi za freelance u karticama
+              <FormattedMessage
+                id="ProjectsDescription.DescProjects"
+                defaultMessage="Projects"
+              />
             </Typography>
             <ProjectsLoaders />
           </Container>
@@ -156,6 +186,6 @@ export default function Projects() {
         </Typography>
       </footer>
       {/* End footer */}
-    </React.Fragment>
+    </>
   );
 }

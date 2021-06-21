@@ -44,5 +44,16 @@
     "ProjectsDescription.Section": "Projects section",
     "ProjectsDescription.Projects": "Projects",
     "ProjectsDescription.Desc": "For more information about projects and work experience please visit section 'Work experience' in the navigation bar on the right side.",
-    "ProjectsDescription.thn": "Thank you."
+    "ProjectsDescription.thn": "Thank you.",
+    "ProjectsDescription.DescProjects": "Currently, I am working for 'contrimo consulting and innovations' stationed in Belgrade and Mannheim.",
+    "ProjectsDescription.NumOfPro": "number of projects",
+    "ProjectsDescription.Consultant": "IT Consultant",
+    "ProjectsDescription.nov": "November 2018 - present",
+    "ProjectsDescription.sep": "September 2009 - November 2018",
+    "ProjectsDescription.visit": "visit",
+    "ProjectsDescription.Captain": "Captain",
+    "ProjectsDescription.Army": "Army",
+    "ProjectsDescription.decsArmy": "For nine years I work for the Armed forces of Serbia as a commissioned officer - final rank captain.",
+    "ProjectsDescription.decsCont": "Since 2018 I am working from Contrimo consulting and innovations as an IT consultant.",
+    "ProjectsDescription.decsFree": "From time to time I worked freelance, various technologies, and libraries. You can check out some of the projects in the cards.There are many projects in Node JS, React, bootstrap. You are welcome to explore."
 }
