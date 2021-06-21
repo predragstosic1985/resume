@@ -8,6 +8,7 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     margin: "0.1rem",
+    height: "23rem",
   },
 }));
 
@@ -29,6 +31,8 @@ export default function CircularIndeterminate() {
   const classes = useStyles();
   const [progress, setProgress] = useState(0);
   const [projectNumber, setProjectNumber] = useState(0);
+  const [projectArmyNumber, setProjectArmyNumber] = useState(0);
+  const [projectNumberFreeLance, setProjectNumberFreeLance] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -48,6 +52,30 @@ export default function CircularIndeterminate() {
         prevProgress === 7 ? 7 : prevProgress + 1
       );
     }, 800);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProjectArmyNumber((prevProgress) =>
+        prevProgress === 20 ? 20 : prevProgress + 1
+      );
+    }, 200);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProjectNumberFreeLance((prevProgress) =>
+        prevProgress === 10 ? 10 : prevProgress + 1
+      );
+    }, 400);
 
     return () => {
       clearInterval(timer);
@@ -74,7 +102,7 @@ export default function CircularIndeterminate() {
           justifyContent="center"
         >
           <Typography variant="h6" component="div" color="textSecondary">
-            {projectNumber}+
+            {props.numberOfProjects}+
           </Typography>
         </Box>
       </Box>
@@ -90,7 +118,12 @@ export default function CircularIndeterminate() {
               Contrimo
             </Typography>
             <Typography gutterBottom align="center">
-              <CircularProgressWithLabel value={progress} />
+              <CircularProgressWithLabel
+                color="primary"
+                thickness={6}
+                value={progress}
+                numberOfProjects={projectNumber}
+              />
             </Typography>
 
             <Typography
@@ -113,13 +146,15 @@ export default function CircularIndeterminate() {
               IT Consultant
             </Typography>
             <Typography align="justify">
-              This is a media card. You can use this section to describe the
-              content.
+              Since 2018 I am working from Contrimo consulting and innovations
+              as an IT consultant.
             </Typography>
           </CardContent>
           <CardActions>
             <Button size="small" color="primary">
-              visit
+              <Link href="https://www.contrimo.com/en/" target="_blank">
+                visit
+              </Link>
             </Button>
           </CardActions>
         </Card>
@@ -128,17 +163,45 @@ export default function CircularIndeterminate() {
         <Card className={classes.card}>
           <CardContent className={classes.cardContent}>
             <Typography gutterBottom variant="h5" component="h2" align="center">
-              Contrimo
-              <CircularProgressWithLabel value={progress} />
+              Army
+            </Typography>
+            <Typography gutterBottom align="center">
+              <CircularProgressWithLabel
+                thickness={6}
+                value={progress}
+                numberOfProjects={projectArmyNumber}
+              />
+            </Typography>
+
+            <Typography
+              gutterBottom
+              variant="h5"
+              variant="subtitle2"
+              align="center"
+            >
+              number of projects
+            </Typography>
+            <Typography
+              gutterBottom
+              variant="h5"
+              variant="body1"
+              align="center"
+            >
+              sep 2009 - nov 2018
+            </Typography>
+            <Typography variant="caption" align="center" gutterBottom>
+              Captain
             </Typography>
             <Typography align="justify">
-              This is a media card. You can use this section to describe the
-              content.
+              For nine years I work for the Armed forces of Serbia as a
+              commissioned officer - final rank captain.
             </Typography>
           </CardContent>
           <CardActions>
             <Button size="small" color="primary">
-              visit
+              <Link href="http://www.vs.rs/" target="_blank">
+                visit
+              </Link>
             </Button>
           </CardActions>
         </Card>
@@ -147,19 +210,32 @@ export default function CircularIndeterminate() {
         <Card className={classes.card}>
           <CardContent className={classes.cardContent}>
             <Typography gutterBottom variant="h5" component="h2" align="center">
-              Contrimo
-              <CircularProgressWithLabel value={progress} />
+              Freelance
+            </Typography>
+            <Typography gutterBottom align="center">
+              <CircularProgressWithLabel
+                color="inherit"
+                thickness={6}
+                value={progress}
+                numberOfProjects={projectNumberFreeLance}
+              />
+            </Typography>
+
+            <Typography
+              gutterBottom
+              variant="h5"
+              variant="subtitle2"
+              align="center"
+            >
+              number of projects
             </Typography>
             <Typography align="justify">
-              This is a media card. You can use this section to describe the
-              content.
+              From time to time I worked freelance, various technologies, and
+              libraries. You can check out some of the projects in the cards.
+              There are many projects in Node JS, React, bootstrap. You are
+              welcome to explore.
             </Typography>
           </CardContent>
-          <CardActions>
-            <Button size="small" color="primary">
-              visit
-            </Button>
-          </CardActions>
         </Card>
       </Grid>
     </div>

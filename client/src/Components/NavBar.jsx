@@ -111,7 +111,7 @@ export default function PersistentDrawerRight() {
   };
 
   const logutUser = () => {
-    history.push("/");
+    history.push("/login");
   };
 
   const goToProjects = () => {
@@ -228,9 +228,9 @@ export default function PersistentDrawerRight() {
         </List>
         <Divider />
         <List>
-          <ListItem button>
+          <ListItem button onClick={logutUser}>
             <ListItemIcon>
-              <PowerSettingsNewIcon onClick={logutUser} />
+              <PowerSettingsNewIcon />
             </ListItemIcon>
             <ListItemText primary="Logout" />
           </ListItem>
