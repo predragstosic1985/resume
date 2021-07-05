@@ -132,9 +132,8 @@ export default function PersistentDrawerRight() {
         })}
       >
         <Toolbar>
-          <Typography variant="h6" noWrap className={classes.title}>
+          <Typography variant="h4" noWrap className={classes.title}>
             <Typography
-              variant="h4"
               className={classes.brandText}
               display="inline"
               color="initial"
@@ -142,7 +141,6 @@ export default function PersistentDrawerRight() {
               C
             </Typography>
             <Typography
-              variant="h4"
               className={classes.brandText}
               display="inline"
               color="secondary"

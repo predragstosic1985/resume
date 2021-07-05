@@ -17,6 +17,20 @@ export const postComment = async (comment) => {
   return data;
 };
 
+export const sendEmail = async (comment) => {
+  let axiosConfig = {
+    headers: {
+      "content-type": "application/json",
+    },
+  };
+  const data = await axios.post(
+    `${baseLink}/api/email/sent`,
+    comment,
+    axiosConfig
+  );
+  return data;
+};
+
 export const getComments = async () => {
   const data = await axios.get(`${baseLink}/api/comments/read`);
   return data;

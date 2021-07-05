@@ -1,50 +1,95 @@
 const router = require("express").Router();
-const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-// sgMail.setApiKey(
-//   "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"
-// );
-// sgMail.setApiKey(
-//   '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'
-// );
+const nodemailer = require("nodemailer");
 
-// read all
 router.post("/sent", (req, res) => {
-  console.log("req.body.email", req.body.email);
-  const key = sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-  //   const mailOptions = {
-  //     from: "predragstosic1985@gmail.com",
-  //     to: req.body.email,
-  //     subject: "Thank you",
-  //     text:
-  //       "Zdravo/Hello,\n\n" +
-  //       "Molimo vas verifikujte svoj nalog, klikom na link\n\nPlease verify your account by clicking the link. \n\n" +
-  //       "\nhttp://" +
-  //       req.headers.host +
-  //       "/confirmation/" +
-  //       "\n\nDMS - Dental Management System",
-  //   };
-
-  const msg = {
-    to: "berkutsp@gmail.com",
-    from: "predragstosic1985@gmail.com",
-    subject: "Sending with Twilio SendGrid is Fun",
-    text: "and easy to do anywhere, even with Node.js",
-    html: "<strong>and easy to do anywhere, even with Node.js</strong>",
-  };
-  sgMail.send(msg).then(
-    () => {
-      console.log("Email sent");
-      return res.status(200).send({ msg: "Email sent" });
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "berkutsp@gmail.com",
+      pass: "Sarplaninac0202",
     },
-    (error) => {
-      console.error("err 1", error);
+  });
 
-      if (error.response) {
-        console.error("err 2", error.response.body);
-      }
+  const mailOptions = {
+    from: "berkutsp@gmail.com",
+    to: req.body.email,
+    subject: "Predrag Stosic",
+    html: `<html>
+      <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Predrag Stosic</title>
+      </head>
+      <body >
+        <span style="font-family: sans-serif; color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0; ">resume</span>
+        <tableborder="0" >
+          <tr>
+            <td>&nbsp;</td>
+            <td style="background: #ffffff; font-family: sans-serif; display: block; margin: 0 auto !important; max-width: 580px; padding: 10px; width: 580px;">
+              <div style="background: #ffffff; font-family: sans-serif; box-sizing: border-box; display: block; margin: 0 auto; max-width: 580px; padding: 10px; ">
+                <table  style="background: #ffffff; border-radius: 10px; width: 100%;">
+                  <tr>
+                    <td style="font-family: sans-serif; box-sizing: border-box; padding: 20px; ">
+                      <table>
+                        <tr>
+                          <td>
+                            <p>Zdravo / Hello</p>
+                            <p>Hvala Vam na komentaru i izdvojenom vremenu.</p>
+                            <p>Thank you for your time and comment.</p>
+                            <table>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <table  >
+                                      <tbody>
+                                        <tr>
+                                          <td> <a style="
+                                            background-color: #3498db; 
+                                            border-color: #3498db; 
+                                            color: #ffffff;  
+                                            border: solid 1px #3498db;
+                                            border-radius: 5px;
+                                            box-sizing: border-box;
+                                            cursor: pointer;
+                                            display: inline-block;
+                                            font-size: 14px;
+                                            font-weight: bold;
+                                            margin: 0;
+                                            padding: 12px 25px;
+                                            text-decoration: none;
+                                            text-transform: capitalize;  " href="https://github.com/predragstosic1985" target="_blank">Github</a> </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <p>  Zelim Vam lep dan. / Have a nice day.</p>
+                            <p>Predrag Stosic.</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </body>
+    </html>`,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      return res.status(500).end();
+    } else {
+      console.log("Email sent: " + info.response);
+      return res.status(200).send({ msg: "Email sent" });
     }
-  );
+  });
 });
 
 module.exports = router;

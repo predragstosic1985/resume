@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { FormattedMessage } from "react-intl";
 import CommentsFormHeader from "./AdditionalComponents/CommentsFormHeader";
-import { postComment, updateComment } from "../commentsServices";
+import { postComment, updateComment, sendEmail } from "../commentsServices";
 import { isEmpty } from "lodash";
 import proxyPaths from "../proxyPaths.json";
 
@@ -87,6 +87,12 @@ export default function CommentsForm({
       console.log("err post");
     }
     postingRegister();
+    const emailSender = sendEmail(comment);
+    if (emailSender) {
+      console.log("email sent");
+    } else {
+      console.log("some error occured");
+    }
   };
 
   const handleOnChange = (e, data) => {
