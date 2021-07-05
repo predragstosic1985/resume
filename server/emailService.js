@@ -66,7 +66,7 @@ router.post("/sent", (req, res) => {
                               </tbody>
                             </table>
                             <p>  Zelim Vam lep dan. / Have a nice day.</p>
-                            <p>Predrag Stosic.</p>
+                            <img src="./Assets/img.stole.jpg" alt="Predrag Stosic" style="border-radius: 50%; width: 150px; height: 150px;"/>
                           </td>
                         </tr>
                       </table>

@@ -7,6 +7,8 @@ import MessageIcon from "@material-ui/icons/Message";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import Backdrop from "@material-ui/core/Backdrop";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { FormattedMessage } from "react-intl";
 import CommentsFormHeader from "./AdditionalComponents/CommentsFormHeader";
 import { postComment, updateComment, sendEmail } from "../commentsServices";
@@ -28,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: "#fff",
+  },
 }));
 
 export default function CommentsForm({
@@ -46,6 +52,7 @@ export default function CommentsForm({
 
   const [inputsError, setInputsError] = useState({});
   const [comment, setComment] = useState(details ? details : initState);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const errors = { ...inputsError };
@@ -76,6 +83,7 @@ export default function CommentsForm({
   };
 
   const submitComment = async () => {
+    setIsLoading(true);
     const response = comment.docID
       ? await updateComment(comment.docID, comment)
       : await postComment(comment);
@@ -88,10 +96,12 @@ export default function CommentsForm({
     }
     postingRegister();
     const emailSender = sendEmail(comment);
+    setIsLoading(true);
     if (emailSender) {
-      console.log("email sent");
+      setIsLoading(false);
     } else {
       console.log("some error occured");
+      setIsLoading(false);
     }
   };
 
@@ -126,122 +136,139 @@ export default function CommentsForm({
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
+    <>
+      <Backdrop open={isLoading}>
+        <CircularProgress color="secondary" />
+      </Backdrop>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
 
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <MessageIcon />
-        </Avatar>
-        <CommentsFormHeader />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <MessageIcon />
+          </Avatar>
+          <CommentsFormHeader />
 
-        <form className={classes.form} noValidate>
-          {/* <CommentsFormCheckBox /> */}
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            onChange={handleOnChange}
-            error={inputsError.name ? true : false}
-            helperText={
-              inputsError.name ? (
+          <form className={classes.form} noValidate>
+            {/* <CommentsFormCheckBox /> */}
+            <TextField
+              variant="outlined"
+              disabled={isLoading}
+              margin="normal"
+              required
+              fullWidth
+              onChange={handleOnChange}
+              error={inputsError.name ? true : false}
+              helperText={
+                inputsError.name ? (
+                  <FormattedMessage
+                    id="CommentsForm.nameValidation"
+                    defaultMessage="Name/Nickname"
+                  />
+                ) : (
+                  ""
+                )
+              }
+              label={
                 <FormattedMessage
-                  id="CommentsForm.nameValidation"
+                  id="CommentsForm.nameComment"
                   defaultMessage="Name/Nickname"
                 />
-              ) : (
-                ""
-              )
-            }
-            label={
-              <FormattedMessage
-                id="CommentsForm.nameComment"
-                defaultMessage="Name/Nickname"
-              />
-            }
-            name="name"
-            value={comment.name}
-            autoComplete="off"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            error={inputsError.email ? true : false}
-            helperText={
-              inputsError.email ? (
+              }
+              name="name"
+              value={comment.name}
+              autoComplete="off"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              disabled={isLoading}
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              error={inputsError.email ? true : false}
+              helperText={
+                inputsError.email ? (
+                  <FormattedMessage
+                    id="CommentsForm.emailValidation"
+                    defaultMessage="email"
+                  />
+                ) : (
+                  ""
+                )
+              }
+              value={comment.email}
+              label={
                 <FormattedMessage
-                  id="CommentsForm.emailValidation"
-                  defaultMessage="email"
+                  id="CommentsForm.email"
+                  defaultMessage="Email"
                 />
-              ) : (
-                ""
-              )
-            }
-            value={comment.email}
-            label={
-              <FormattedMessage
-                id="CommentsForm.email"
-                defaultMessage="Email"
-              />
-            }
-            name="email"
-            onChange={handleOnChange}
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            multiline
-            rows={4}
-            value={comment.comment}
-            error={inputsError.comment ? true : false}
-            helperText={
-              inputsError.comment ? (
+              }
+              name="email"
+              onChange={handleOnChange}
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              disabled={isLoading}
+              margin="normal"
+              required
+              fullWidth
+              multiline
+              rows={4}
+              value={comment.comment}
+              error={inputsError.comment ? true : false}
+              helperText={
+                inputsError.comment ? (
+                  <FormattedMessage
+                    id="CommentsForm.commentValidation"
+                    defaultMessage="email"
+                  />
+                ) : (
+                  ""
+                )
+              }
+              id="comment"
+              label={
                 <FormattedMessage
-                  id="CommentsForm.commentValidation"
-                  defaultMessage="email"
+                  id="CommentsForm.comment"
+                  defaultMessage="comenet"
                 />
-              ) : (
-                ""
-              )
-            }
-            id="comment"
-            label={
-              <FormattedMessage
-                id="CommentsForm.comment"
-                defaultMessage="comenet"
-              />
-            }
-            name="comment"
-            onChange={handleOnChange}
-            autoComplete="off"
-            autoFocus
-          />
-          <ButtonGroup variant="contained" fullWidth>
-            <Button autoFocus onClick={handleClose} color="default">
-              <FormattedMessage
-                id="CommentsForm.Cancel"
-                defaultMessage="Cancel"
-              />
-            </Button>
-            <Button
-              color="primary"
-              onClick={onSubmit}
-              className={classes.submit}
-            >
-              <FormattedMessage id="CommentsForm.Send" defaultMessage="Send" />
-            </Button>
-          </ButtonGroup>
-        </form>
-      </div>
-    </Container>
+              }
+              name="comment"
+              onChange={handleOnChange}
+              autoComplete="off"
+              autoFocus
+            />
+            <ButtonGroup variant="contained" fullWidth>
+              <Button
+                autoFocus
+                onClick={handleClose}
+                color="default"
+                disabled={isLoading}
+              >
+                <FormattedMessage
+                  id="CommentsForm.Cancel"
+                  defaultMessage="Cancel"
+                />
+              </Button>
+              <Button
+                disabled={isLoading}
+                color="primary"
+                onClick={onSubmit}
+                className={classes.submit}
+              >
+                <FormattedMessage
+                  id="CommentsForm.Send"
+                  defaultMessage="Send"
+                />
+              </Button>
+            </ButtonGroup>
+          </form>
+        </div>
+      </Container>
+    </>
   );
 }
