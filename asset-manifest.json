@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/resume/client/static/css/main.9ea44674.chunk.css",
+    "main.js": "/resume/client/static/js/main.b2d7f9e7.chunk.js",
+    "main.js.map": "/resume/client/static/js/main.b2d7f9e7.chunk.js.map",
+    "runtime-main.js": "/resume/client/static/js/runtime-main.8ba39c8c.js",
+    "runtime-main.js.map": "/resume/client/static/js/runtime-main.8ba39c8c.js.map",
+    "static/js/2.c1ced96c.chunk.js": "/resume/client/static/js/2.c1ced96c.chunk.js",
+    "static/js/2.c1ced96c.chunk.js.map": "/resume/client/static/js/2.c1ced96c.chunk.js.map",
+    "static/js/3.0f4c8f1d.chunk.js": "/resume/client/static/js/3.0f4c8f1d.chunk.js",
+    "static/js/3.0f4c8f1d.chunk.js.map": "/resume/client/static/js/3.0f4c8f1d.chunk.js.map",
+    "index.html": "/resume/client/index.html",
+    "static/css/main.9ea44674.chunk.css.map": "/resume/client/static/css/main.9ea44674.chunk.css.map",
+    "static/js/2.c1ced96c.chunk.js.LICENSE.txt": "/resume/client/static/js/2.c1ced96c.chunk.js.LICENSE.txt",
+    "static/media/deno.e29fcd7f.svg": "/resume/client/static/media/deno.e29fcd7f.svg",
+    "static/media/developer.1088a59f.jpg": "/resume/client/static/media/developer.1088a59f.jpg",
+    "static/media/fajt.5f4d91ec.jpg": "/resume/client/static/media/fajt.5f4d91ec.jpg",
+    "static/media/garda.32349ab1.png": "/resume/client/static/media/garda.32349ab1.png",
+    "static/media/manda.9fd81ccf.jpg": "/resume/client/static/media/manda.9fd81ccf.jpg",
+    "static/media/sara.a569716e.jpg": "/resume/client/static/media/sara.a569716e.jpg",
+    "static/media/soldat_dent.e51ea477.jpg": "/resume/client/static/media/soldat_dent.e51ea477.jpg",
+    "static/media/ugr.1d1bb746.jpg": "/resume/client/static/media/ugr.1d1bb746.jpg",
+    "static/media/uni.550c59c7.jpg": "/resume/client/static/media/uni.550c59c7.jpg",
+    "static/media/va.5722409b.jpg": "/resume/client/static/media/va.5722409b.jpg",
+    "static/media/virtualDoc.f358ffd0.jpg": "/resume/client/static/media/virtualDoc.f358ffd0.jpg",
+    "static/media/web_developer_smaller.a8bb58e2.jpg": "/resume/client/static/media/web_developer_smaller.a8bb58e2.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ba39c8c.js",
+    "static/js/2.c1ced96c.chunk.js",
+    "static/css/main.9ea44674.chunk.css",
+    "static/js/main.b2d7f9e7.chunk.js"
+  ]
+}
